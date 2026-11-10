@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Line, Path } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit, useLayout, usePanResponder } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit, useLayout, usePanResponder } from '@/lib/kit';
 
 /** A wall-clock time, 24-hour: `{ hours: 0–23, minutes: 0–59 }`. */
 export interface TimeValue {
@@ -102,6 +102,9 @@ export interface TimePickerProps {
   iconColor?: string;
   /** Sheet: the sheet / dialog panel — background, border, radius, padding, shadow. Don't pass `transform` or `opacity`: they animate. */
   menuStyle?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;

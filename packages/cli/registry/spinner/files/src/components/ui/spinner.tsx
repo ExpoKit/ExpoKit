@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 
-import { alpha, useKit } from '@/lib/kit';
+import { cnProps, alpha, useKit } from '@/lib/kit';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -46,6 +46,9 @@ export interface SpinnerProps {
   /** Faint guide behind the motion: the full circle (ring, orbit, arc), the rail (line) or ghost bars (bars). */
   track?: boolean | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const SIZES: Record<SpinnerSize, number> = { sm: 16, md: 24, lg: 36, xl: 52 };
@@ -162,6 +165,7 @@ export function Spinner({
   labelPosition = 'none',
   track = false,
   style,
+    className,
 }: SpinnerProps) {
   const { colors, labels } = useKit();
   const label = labelProp ?? labels.loading;
@@ -189,7 +193,7 @@ export function Spinner({
 
   const bottom = labelPosition === 'bottom';
   return (
-    <View
+    <View {...cnProps(className)}
       accessible
       accessibilityRole="progressbar"
       accessibilityLabel={label}

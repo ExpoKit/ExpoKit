@@ -7,9 +7,18 @@
   "summary": "A multiline field that glides taller line by line, with a ring-style counter.",
   "usage": "import { useState } from 'react';\nimport { Textarea } from '@/components/ui/textarea';\n\nconst [review, setReview] = useState('');\n<Textarea label=\"Your review\" value={review} onChangeText={setReview} maxLength={200} />",
   "behavior": [
-    ["Motion", "The box grows smoothly between minRows and maxRows as you type; the label floats up on focus and a halo glows around the field."],
-    ["Screen readers", "The input is labelled by label or placeholder; the counter reads like '42 of 200 characters left' and error / success messages land in a polite live region."],
-    ["Web", "The browser focus outline is removed; the field draws its own focus halo."]
+    [
+      "Motion",
+      "The box grows smoothly between minRows and maxRows as you type; the label floats up on focus and a halo glows around the field."
+    ],
+    [
+      "Screen readers",
+      "The input is labelled by label or placeholder; the counter reads like '42 of 200 characters left' and error / success messages land in a polite live region."
+    ],
+    [
+      "Web",
+      "The browser focus outline is removed; the field draws its own focus halo."
+    ]
   ],
   "dependencies": [
     "react-native-svg"
@@ -21,7 +30,7 @@
     [
       "label",
       "string",
-      "\u2014",
+      "—",
       "Rests on the first line, floats onto the border on focus."
     ],
     [
@@ -51,7 +60,7 @@
     [
       "maxLength",
       "number",
-      "\u2014",
+      "—",
       "Character limit; enables the counter."
     ],
     [
@@ -69,25 +78,25 @@
     [
       "toolbar",
       "ReactNode",
-      "\u2014",
-      "Row inside the bottom edge \u2014 attach, emoji, send."
+      "—",
+      "Row inside the bottom edge — attach, emoji, send."
     ],
     [
       "error",
       "string",
-      "\u2014",
+      "—",
       "Red state, icon + message that slides in, one shake."
     ],
     [
       "success",
       "boolean | string",
-      "\u2014",
+      "—",
       "Green border + animated check; a string is shown as the message."
     ],
     [
       "helper",
       "string",
-      "\u2014",
+      "—",
       "Hint under the field."
     ],
     [
@@ -105,37 +114,43 @@
     [
       "style",
       "StyleProp<ViewStyle>",
-      "\u2014",
+      "—",
       "Style for the outer wrapper around the field and footer (the one that shakes)."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ],
     [
       "fieldStyle",
       "StyleProp<ViewStyle>",
-      "\u2014",
+      "—",
       "The bordered box: background, border width / colour, radius, height, padding. Wins over the computed style; a borderColor replaces the resting border only (focus, error and success colours still show). height is ignored: the box grows with minRows / maxRows."
     ],
     [
       "inputStyle",
       "StyleProp<TextStyle>",
-      "\u2014",
-      "The typed text \u2014 fontSize, lineHeight, fontWeight, color, fontFamily. Row height follows lineHeight (or scales with fontSize)."
+      "—",
+      "The typed text — fontSize, lineHeight, fontWeight, color, fontFamily. Row height follows lineHeight (or scales with fontSize)."
     ],
     [
       "labelStyle",
       "StyleProp<TextStyle>",
-      "\u2014",
-      "Label in both modes (floating and above). color is the resting colour \u2014 focus (accent), error and success still take over; fontSize sets the resting size, it floats at the same ratio and the notch follows its width."
+      "—",
+      "Label in both modes (floating and above). color is the resting colour — focus (accent), error and success still take over; fontSize sets the resting size, it floats at the same ratio and the notch follows its width."
     ],
     [
       "messageStyle",
       "StyleProp<TextStyle>",
-      "\u2014",
+      "—",
       "Helper / error / success text. color applies to the helper; error and success keep their tone colour."
     ],
     [
       "counterStyle",
       "StyleProp<TextStyle>",
-      "\u2014",
+      "—",
       "Counter text (42/280 and the characters-left number); warning / danger still win near the limit."
     ],
     [
@@ -145,10 +160,10 @@
       "Placeholder colour."
     ],
     [
-      "\u2026TextInputProps",
+      "…TextInputProps",
       "",
       "",
-      "value, defaultValue, onChangeText, placeholder, \u2026"
+      "value, defaultValue, onChangeText, placeholder, …"
     ]
   ]
 }

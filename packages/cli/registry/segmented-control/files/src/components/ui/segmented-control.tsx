@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 
 export type SegmentedControlVariant = 'pill' | 'underline' | 'outline';
 export type SegmentedControlSize = 'sm' | 'md' | 'lg';
@@ -47,6 +47,9 @@ export interface SegmentedControlProps {
   haptics?: boolean;
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -83,6 +86,7 @@ export function SegmentedControl({
   haptics = true,
   accessibilityLabel,
   style,
+    className,
 }: SegmentedControlProps) {
   const { colors, radius, dark, shadow } = useKit();
   const gid = 'sc' + useId().replace(/[^a-zA-Z0-9]/g, '');
@@ -202,7 +206,7 @@ export function SegmentedControl({
   const trackBorder = pill ? StyleSheet.hairlineWidth : outline ? 1 : 0;
 
   return (
-    <View
+    <View {...cnProps(className)}
       {...scrub.panHandlers}
       accessibilityRole="tablist"
       accessibilityLabel={accessibilityLabel}

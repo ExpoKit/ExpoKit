@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
-import { alpha, motion, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, useKit } from '@/lib/kit';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const CHECK_LEN = 16;
@@ -68,6 +68,9 @@ export interface OtpInputProps {
 
   style?: StyleProp<ViewStyle> | undefined;
 
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 type CellState = 'idle' | 'error' | 'success';
@@ -103,6 +106,7 @@ export function OtpInput({
   separatorAfter,
   maxCellSize = 52,
   style,
+    className,
 }: OtpInputProps) {
   const { colors, labels } = useKit();
   const reduce = useReduceMotion();
@@ -144,7 +148,7 @@ export function OtpInput({
   const message = error ? errorText : success ? successText : helperText;
 
   return (
-    <View
+    <View {...cnProps(className)}
       onLayout={(e) => setWidth(Math.floor(e.nativeEvent.layout.width))}
       style={[styles.root, disabled && styles.disabled, style]}
     >

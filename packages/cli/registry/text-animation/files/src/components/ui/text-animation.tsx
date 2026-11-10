@@ -13,7 +13,7 @@ import {
   type ViewStyle,
 } from 'react-native';
 
-import { useKit } from '@/lib/kit';
+import { cnProps, useKit } from '@/lib/kit';
 
 export type AnimatedTextVariant = 'reveal' | 'shimmer' | 'cascade' | 'scramble' | 'typewriter';
 /** 'mount' animates once when shown; 'change' also replays whenever the text changes. */
@@ -42,6 +42,9 @@ export interface AnimatedTextProps {
   style?: StyleProp<ViewStyle> | undefined;
   /** fontSize, fontWeight, lineHeight, letterSpacing, textAlign… applied to every letter. */
   textStyle?: StyleProp<TextStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const STAGGER: Record<AnimatedTextVariant, number> = { reveal: 70, shimmer: 80, cascade: 28, scramble: 45, typewriter: 32 };
@@ -590,6 +593,7 @@ export function AnimatedText({
   replayKey,
   onComplete,
   style,
+    className,
   textStyle,
 }: AnimatedTextProps) {
   const { colors, font, text: type } = useKit();
@@ -647,7 +651,7 @@ export function AnimatedText({
   }
 
   return (
-    <View accessible accessibilityRole="text" accessibilityLabel={text} style={style}>
+    <View {...cnProps(className)} accessible accessibilityRole="text" accessibilityLabel={text} style={style}>
       <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
         {body}
       </View>

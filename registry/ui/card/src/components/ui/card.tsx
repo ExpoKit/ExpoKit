@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 import Svg, { Defs, RadialGradient, Rect, Stop } from 'react-native-svg';
 
-import { alpha, motion, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, useKit } from '@/lib/kit';
 
 export type CardVariant = 'default' | 'outline' | 'elevated';
 export type CardHighlight = 'none' | 'spotlight' | 'border';
@@ -41,6 +41,9 @@ export interface CardProps {
   disabled?: boolean;
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const CardContext = createContext({ padding: 18 });
@@ -62,6 +65,7 @@ export function Card({
   disabled,
   accessibilityLabel,
   style,
+    className,
 }: CardProps) {
   const { colors, radius, dark } = useKit();
   const tint = accent ?? colors.accent;
@@ -163,7 +167,7 @@ export function Card({
 
   return (
     <CardContext.Provider value={{ padding }}>
-      <Animated.View
+      <Animated.View {...cnProps(className)}
         onLayout={onLayout}
         style={[
           { borderRadius: corner, opacity: disabled ? 0.55 : 1 },

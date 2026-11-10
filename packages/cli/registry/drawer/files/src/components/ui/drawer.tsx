@@ -22,7 +22,7 @@ import {
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-import { alpha, motion, useKit, usePanResponder } from '@/lib/kit';
+import { cnProps, alpha, motion, useKit, usePanResponder } from '@/lib/kit';
 
 export type DrawerSide = 'left' | 'right';
 /**
@@ -108,6 +108,9 @@ export interface DrawerProps {
   style?: StyleProp<ViewStyle>;
   /** Panel style. */
   panelStyle?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 /**
@@ -136,6 +139,7 @@ export function Drawer({
   bottomInset,
   accessibilityLabel: accessibilityLabelProp,
   style,
+    className,
   panelStyle,
 }: DrawerProps) {
   const { colors, dark, radius, labels } = useKit();
@@ -421,7 +425,7 @@ export function Drawer({
 
   return (
     <DrawerContext.Provider value={ctx}>
-      <View
+      <View {...cnProps(className)}
         ref={rootRef}
         {...edgePan}
         onTouchStart={measure}

@@ -147,6 +147,12 @@
       "Style for the row; ListGroup / ListSection apply theirs to their root view."
     ],
     [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
+    ],
+    [
       "ListGroup header / footer",
       "string",
       "—",

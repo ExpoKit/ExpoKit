@@ -177,6 +177,12 @@
       "Style for the wheel, clock, slot grid or field wrapper, depending on variant and presentation."
     ],
     [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
+    ],
+    [
       "fieldStyle",
       "StyleProp<ViewStyle>",
       "—",

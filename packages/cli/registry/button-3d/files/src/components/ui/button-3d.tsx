@@ -3,7 +3,7 @@ import { AccessibilityInfo, ActivityIndicator, Animated, Platform, Pressable, St
 import * as Haptics from 'expo-haptics';
 import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
 
-import { isTextNode, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, isTextNode, motion, readableOn, useKit } from '@/lib/kit';
 
 export type Button3DAppearance = 'auto' | 'light' | 'dark' | 'glass';
 export type Button3DSize = 'sm' | 'md' | 'lg';
@@ -36,6 +36,9 @@ export interface Button3DProps {
   haptics?: boolean;
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -108,6 +111,7 @@ export function Button3D({
   haptics = true,
   accessibilityLabel,
   style,
+    className,
 }: Button3DProps) {
   const { dark, font } = useKit();
   const reduce = useReduceMotion();
@@ -151,7 +155,7 @@ export function Button3D({
   );
 
   return (
-    <Pressable
+    <Pressable {...cnProps(className)}
       onPress={() => {
         // Android has no touch delay inside scroll views, so the tap is only felt once it's a press.
         if (haptics && Platform.OS === 'android') Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});

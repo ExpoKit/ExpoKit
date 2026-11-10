@@ -125,6 +125,12 @@
       "StyleProp",
       "—",
       "Root, inactive track, active fill, thumb and value text."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ],
   "behavior": [

@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-import { alpha, isTextNode, motion, useKit } from '@/lib/kit';
+import { cnProps, alpha, isTextNode, motion, useKit } from '@/lib/kit';
 
 export type AccordionVariant = 'default' | 'bordered' | 'separated';
 
@@ -30,6 +30,9 @@ export interface AccordionProps {
   /** Chevron colour of open items (default: theme accent). */
   accent?: string;
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 interface Ctx {
@@ -53,6 +56,7 @@ export function Accordion({
   variant = 'default',
   accent,
   style,
+    className,
 }: AccordionProps) {
   const { colors, radius } = useKit();
   const reduce = useReduceMotion();
@@ -85,7 +89,7 @@ export function Accordion({
 
   return (
     <AccordionContext.Provider value={ctx}>
-      <View
+      <View {...cnProps(className)}
         style={[
           variant === 'bordered' && {
             borderWidth: StyleSheet.hairlineWidth * 2,

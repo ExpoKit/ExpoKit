@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { AccessibilityInfo, Animated, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 
-import { motion, useKit } from '@/lib/kit';
+import { cnProps, motion, useKit } from '@/lib/kit';
 
 export type FlipDirection = 'horizontal' | 'vertical';
 export type FlipTrigger = 'press' | 'none';
@@ -35,6 +35,9 @@ export interface FlipCardProps {
   /** Screen-reader hints (default: the kit's `labels.flipToBack` / `labels.flipToFront`). */
   labels?: { toBack?: string; toFront?: string };
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // How wide the shadow under a flipping card is through the turn: roughly cos θ, always a little
@@ -80,6 +83,7 @@ export function FlipCard({
   accessibilityLabel,
   labels,
   style,
+    className,
 }: FlipCardProps) {
   const kitLabels = useKit().labels;
   const controlled = flippedProp !== undefined;
@@ -174,7 +178,7 @@ export function FlipCard({
 
   if (trigger === 'none') return <View style={style}>{body}</View>;
   return (
-    <Pressable
+    <Pressable {...cnProps(className)}
       onPress={toggle}
       accessibilityRole="button"
       accessibilityLabel={accessibilityLabel}

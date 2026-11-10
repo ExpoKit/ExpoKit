@@ -20,7 +20,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Defs, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 
 /**
  * `default` — a centred alert dialog.
@@ -101,6 +101,9 @@ export interface DialogProps {
   /** Colour of the primary action (default: theme primary; accent in `ios`). */
   accent?: string | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const SHAKE = [10, -9, 7, -5, 3, 0];
@@ -139,6 +142,7 @@ export function Dialog({
   haptics = true,
   accent,
   style,
+    className,
 }: DialogProps) {
   const { colors, radius, dark, font, labels } = useKit();
   const cancelLabel = cancelLabelProp === undefined ? labels.cancel : cancelLabelProp; // null hides it
@@ -463,7 +467,7 @@ export function Dialog({
 
   return (
     <Modal visible={mounted} transparent animationType="none" statusBarTranslucent onRequestClose={requestClose}>
-      <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: colors.overlay, opacity: scrim }]}>
+      <Animated.View {...cnProps(className)} style={[StyleSheet.absoluteFill, { backgroundColor: colors.overlay, opacity: scrim }]}>
         <Pressable style={StyleSheet.absoluteFill} onPress={requestClose} accessible={false} importantForAccessibility="no" />
       </Animated.View>
       <KeyboardAvoidingView

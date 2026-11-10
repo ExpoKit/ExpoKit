@@ -1,3 +1,4 @@
+import { cnProps } from '@/lib/kit';
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { AccessibilityInfo, Animated, Easing, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 
@@ -35,6 +36,9 @@ export interface ConfettiProps {
   onDone?: (() => void) | undefined;
   /** The overlay fills its parent by default; it never takes touches. */
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const PALETTE = ['#ff3d77', '#ffb000', '#3ddcff', '#7cff6b', '#a855ff', '#ffffff', '#ff7a1a'];
@@ -66,7 +70,7 @@ let nextId = 1;
  * animation moves them all. Respects Reduce Motion.
  */
 export const Confetti = forwardRef<ConfettiHandle, ConfettiProps>(function Confetti(
-  { count = 80, colors = PALETTE, origin = 'bottom', duration = 2600, trigger, autoplay = false, onDone, style },
+  { count = 80, colors = PALETTE, origin = 'bottom', duration = 2600, trigger, autoplay = false, onDone, style, className },
   ref
 ) {
   const [size, setSize] = useState({ w: 0, h: 0 });
@@ -181,7 +185,7 @@ export const Confetti = forwardRef<ConfettiHandle, ConfettiProps>(function Confe
   }, [trigger]);
 
   return (
-    <View
+    <View {...cnProps(className)}
       pointerEvents="none"
       accessibilityElementsHidden
       importantForAccessibility="no-hide-descendants"

@@ -3,7 +3,7 @@ import { AccessibilityInfo, Animated, Pressable, StyleSheet, Text, View, type Te
 import Svg, { Circle, Path } from 'react-native-svg';
 
 import { FloatingInput, type FloatingInputProps } from '@/components/ui/floating-input';
-import { alpha, motion, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, useKit } from '@/lib/kit';
 
 export interface PasswordRequirement {
   /** Shown in the checklist, e.g. 'At least 8 characters'. */
@@ -32,6 +32,9 @@ export interface PasswordInputProps extends Omit<FloatingInputProps, 'secureText
   matchMessage?: string | undefined;
   /** Message when `confirmOf` doesn't match (default "Passwords don't match"). */
   mismatchMessage?: string | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -68,6 +71,8 @@ export const PasswordInput = forwardRef<ComponentRef<typeof TextInput>, Password
     success,
     size = 'md',
     iconColor: iconColorProp,
+    className,
+
     ...props
   },
   ref
@@ -110,7 +115,7 @@ export const PasswordInput = forwardRef<ComponentRef<typeof TextInput>, Password
   });
 
   return (
-    <View>
+    <View {...cnProps(className)}>
       <FloatingInput
         ref={ref}
         {...props}

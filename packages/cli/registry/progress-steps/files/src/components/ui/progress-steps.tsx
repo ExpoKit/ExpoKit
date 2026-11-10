@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import Svg, { Path, Rect } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
@@ -44,6 +44,9 @@ export interface ProgressStepsProps {
   /** Colour of completed steps, connectors and the current ring (default: theme accent). */
   accent?: string | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -72,6 +75,7 @@ export function ProgressSteps({
   haptics = true,
   accent,
   style,
+    className,
 }: ProgressStepsProps) {
   const { colors, dark, font, labels } = useKit();
   const ff = font.family ? { fontFamily: font.family } : null;
@@ -186,7 +190,7 @@ export function ProgressSteps({
   const colW = width / Math.max(1, n);
   const segW = colW - NODE - GAP * 2;
   return (
-    <View
+    <View {...cnProps(className)}
       onLayout={vertical ? undefined : (e) => setWidth(Math.round(e.nativeEvent.layout.width))}
       style={[vertical ? styles.vertical : styles.horizontal, style]}
     >

@@ -3,6 +3,7 @@ import { Pressable, StyleSheet, Text, View, type TextProps, type ViewProps } fro
 
 import { DatePicker, type DatePickerPresentation, type DateRange } from '@/components/ui/date-picker';
 import { useKit } from '@/lib/kit';
+import { embedToday } from '../_embed-today';
 
 /** Controls stop at iOS's largest standard text size; content text stays uncapped. */
 const FONT_CAP = 1.35;
@@ -33,7 +34,7 @@ function Ink({ tone, style, ...rest }: TextProps & { tone?: 'muted' }) {
   return <Text style={[{ color: tone === 'muted' ? colors.mutedForeground : colors.foreground }, style]} {...rest} />;
 }
 
-const today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+const today = embedToday();
 
 type Opens = Exclude<DatePickerPresentation, 'auto'>;
 const OPENS: { key: Opens; label: string }[] = [

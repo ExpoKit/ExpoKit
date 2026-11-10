@@ -4,7 +4,7 @@ import Svg, { Defs, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
 
 import { FlipCard, useFlipProgress } from '@/components/ui/flip-card';
 import { TiltCard } from '@/components/ui/tilt-card';
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 import {
   BarcodeLike,
   TicketShape,
@@ -120,6 +120,9 @@ export interface CouponProps {
   onFlip?: ((flipped: boolean) => void) | undefined;
   labels?: CouponLabels | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const VARIANTS: Record<CouponVariant, { r: number; notch: number; edge?: TicketEdge; edgeSize: number; ends?: boolean }> = {
@@ -332,6 +335,7 @@ export function Coupon({
   onFlip,
   labels: labelsProp,
   style,
+    className,
 }: CouponProps) {
   const { colors, dark, font } = useKit();
   const ff = font.family ? { fontFamily: font.family } : null;

@@ -14,7 +14,7 @@ import Svg, { Circle, ClipPath, Defs, G, Line, LinearGradient, Path, Rect, Stop 
 
 import { FlipCard, useFlipProgress } from '@/components/ui/flip-card';
 import { TiltCard } from '@/components/ui/tilt-card';
-import { useKit } from '@/lib/kit';
+import { cnProps, useKit } from '@/lib/kit';
 
 export type PaymentCardBrand = 'visa' | 'mastercard' | 'amex' | 'rupay' | 'none';
 
@@ -58,6 +58,9 @@ export interface PaymentCardProps {
   /** Every built-in string, for translation ({bank} and {last4} are filled in). */
   labels?: PaymentCardLabels | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 export interface PaymentCardLabels {
@@ -227,6 +230,7 @@ export function PaymentCard({
   radius = 16,
   labels,
   style,
+    className,
 }: PaymentCardProps) {
   const { font, shadow } = useKit();
   const ff = font.family ? { fontFamily: font.family } : null;

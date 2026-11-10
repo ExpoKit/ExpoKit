@@ -20,7 +20,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit, useLayout, usePanResponder } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit, useLayout, usePanResponder } from '@/lib/kit';
 
 export type SelectPresentation = 'dropdown' | 'sheet';
 /** @deprecated Use `SelectPresentation`. */
@@ -117,6 +117,9 @@ export interface SelectProps<T extends string | number = string> {
   optionStyle?: StyleProp<ViewStyle>;
   /** Each option's label text — fontSize, fontWeight, color… */
   optionTextStyle?: StyleProp<TextStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 /** Heights and corners match FloatingInput so forms line up. */
@@ -181,6 +184,7 @@ export function Select<T extends string | number = string>({
   maxMenuHeight = 320,
   removableChips = true,
   style,
+    className,
   fieldStyle,
   inputStyle,
   labelStyle,
@@ -682,7 +686,7 @@ export function Select<T extends string | number = string>({
   const chipBg = alpha(tint, dark ? 0.2 : 0.12);
 
   return (
-    <Animated.View style={[{ transform: [{ translateX: shake }] }, style]}>
+    <Animated.View {...cnProps(className)} style={[{ transform: [{ translateX: shake }] }, style]}>
       {floatingLabel ? null : (
         <Animated.Text
           numberOfLines={1}

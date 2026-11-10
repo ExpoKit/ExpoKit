@@ -15,7 +15,7 @@ import {
 import Svg, { Circle, Path } from 'react-native-svg';
 import * as Haptics from 'expo-haptics';
 
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const CHECK = 'M6 12.5l4 4L18.5 8';
@@ -60,6 +60,9 @@ export interface StatefulButtonProps {
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const SIZES: Record<StatefulButtonSize, { h: number; px: number; font: number; icon: number; gap: number }> = {
@@ -251,6 +254,7 @@ export function StatefulButton({
   haptics = true,
   accessibilityLabel,
   style,
+    className,
   textStyle,
 }: StatefulButtonProps) {
   const { colors, radius, dark, font, labels: kitLabels } = useKit();
@@ -443,7 +447,7 @@ export function StatefulButton({
   const hit = Math.max(0, (44 - s.h) / 2);
 
   return (
-    <Animated.View style={[{ transform: [{ translateX: shake }, { scale: press }] }, block ? styles.block : styles.inline, style]}>
+    <Animated.View {...cnProps(className)} style={[{ transform: [{ translateX: shake }, { scale: press }] }, block ? styles.block : styles.inline, style]}>
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={accessibilityLabel ?? label}

@@ -3,7 +3,7 @@ import React, { useEffect, useId, useLayoutEffect, useRef, useState } from 'reac
 import { AccessibilityInfo, Animated, Pressable, StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-native';
 import Svg, { Circle, Defs, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit, usePanResponder } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit, usePanResponder } from '@/lib/kit';
 
 export type SwitchVariant = 'ios' | 'material' | 'icon';
 export type SwitchSize = 'sm' | 'md' | 'lg';
@@ -28,6 +28,9 @@ export interface SwitchProps {
   haptics?: boolean;
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const SIZES: Record<SwitchSize, { w: number; h: number }> = {
@@ -62,6 +65,7 @@ export function Switch({
   haptics = true,
   accessibilityLabel,
   style,
+    className,
 }: SwitchProps) {
   const { colors, dark, font } = useKit();
   const ff = font.family ? { fontFamily: font.family } : null;
@@ -332,7 +336,7 @@ export function Switch({
   }
 
   return (
-    <Pressable {...a11y} style={[styles.row, { opacity: disabled ? 0.45 : 1 }, style]}>
+    <Pressable {...cnProps(className)} {...a11y} style={[styles.row, { opacity: disabled ? 0.45 : 1 }, style]}>
       <View style={styles.text}>
         <Text style={[styles.label, ff, { color: colors.foreground }]}>{label}</Text>
         {description ? <Text style={[styles.description, ff, { color: colors.mutedForeground }]}>{description}</Text> : null}

@@ -67,6 +67,12 @@
       "StyleProp<ViewStyle>",
       "—",
       "Style for the pressable row holding the box and label."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ],
   "behavior": [

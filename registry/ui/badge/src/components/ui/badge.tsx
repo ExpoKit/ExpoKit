@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
-import { alpha, isTextNode, motion, readableOn, type Colors, useKit } from '@/lib/kit';
+import { cnProps, alpha, isTextNode, motion, readableOn, type Colors, useKit } from '@/lib/kit';
 
 export type BadgeIconName = 'bell' | 'message' | 'package' | 'cart' | 'heart' | 'clock' | 'refresh' | 'check' | 'alert';
 
@@ -82,15 +82,17 @@ export interface BadgeIconTileProps {
   /** Tile background (default: muted). */
   backgroundColor?: string | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
 }
 
 /** Rounded square anchor for `NotificationBadge` — pass a built-in `name` or your own `icon`. */
-export function BadgeIconTile({ name, icon, size = 48, color, backgroundColor, style }: BadgeIconTileProps) {
+export function BadgeIconTile({ name, icon, size = 48, color, backgroundColor, style, className }: BadgeIconTileProps) {
   const { colors, radius } = useKit();
   const tint = color ?? colors.foreground;
   const glyph = icon ?? (name ? <BadgeIcon name={name} color={tint} size={Math.round(size * 0.46)} /> : null);
   return (
-    <View
+    <View {...cnProps(className)}
       style={[
         {
           width: size,
@@ -131,6 +133,9 @@ export interface BadgeProps {
    */
   animateChanges?: boolean | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const SIZES: Record<BadgeSize, { h: number; px: number; font: number; dot: number; gap: number }> = {

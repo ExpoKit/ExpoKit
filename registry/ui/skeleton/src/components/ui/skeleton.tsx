@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Defs, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
 
-import { alpha, motion, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, useKit } from '@/lib/kit';
 
 export type SkeletonVariant = 'shimmer' | 'wave' | 'pulse' | 'static';
 
@@ -41,6 +41,9 @@ export interface SkeletonProps {
   children?: React.ReactNode | undefined;
 
   style?: StyleProp<ViewStyle> | undefined;
+
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
 
 }
 
@@ -150,9 +153,9 @@ function measure(node: ComponentRef<typeof View> | null, e: LayoutChangeEvent, d
 
 export interface SkeletonGroupProps {
   children?: React.ReactNode | undefined;
-
   style?: StyleProp<ViewStyle> | undefined;
-
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
 }
 
 /**
@@ -160,14 +163,14 @@ export interface SkeletonGroupProps {
  * view instead of across the whole window. Useful for a card or a preview that is narrower than
  * the window (tablets, web). `Skeleton.Nav` and `Skeleton.Reveal` set one up for you.
  */
-export function SkeletonGroup({ children, style }: SkeletonGroupProps) {
+export function SkeletonGroup({ children, style, className }: SkeletonGroupProps) {
   const parent = useContext(GroupContext);
   const ref = useRef<ComponentRef<typeof View>>(null);
   const [frame, setFrame] = useState<Frame | null>(null);
   const value = useMemo(() => ({ frame }), [frame]);
   if (parent) return <View style={style}>{children}</View>;
   return (
-    <View ref={ref} style={style} onLayout={(e) => measure(ref.current, e, setFrame)}>
+    <View {...cnProps(className)} ref={ref} style={style} onLayout={(e) => measure(ref.current, e, setFrame)}>
       <GroupContext.Provider value={value}>{children}</GroupContext.Provider>
     </View>
   );

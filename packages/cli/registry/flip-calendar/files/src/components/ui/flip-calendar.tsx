@@ -13,7 +13,7 @@ import {
   type ViewStyle,
 } from 'react-native';
 
-import { motion, readableOn, shadowFor, useKit, usePanResponder, type Labels } from '@/lib/kit';
+import { cnProps, motion, readableOn, shadowFor, useKit, usePanResponder, type Labels } from '@/lib/kit';
 
 export interface FlipCalendarProps {
   /** Controlled date (its time of day is kept on every change). */
@@ -36,6 +36,9 @@ export interface FlipCalendarProps {
   haptics?: boolean;
   accessibilityLabel?: string;
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 /** A calendar day without a time: `{ y, m: 0–11, d: 1–31 }`. */
@@ -169,6 +172,7 @@ export function FlipCalendar({
   haptics = true,
   accessibilityLabel,
   style,
+    className,
 }: FlipCalendarProps) {
   const { colors, radius, dark, labels } = useKit();
   const reduce = useReduceMotion();
@@ -364,7 +368,7 @@ export function FlipCalendar({
   const top = valuesFor(day, false);
 
   return (
-    <View
+    <View {...cnProps(className)}
       onLayout={(e: LayoutChangeEvent) => setWidth(Math.round(e.nativeEvent.layout.width))}
       accessible
       accessibilityRole="adjustable"

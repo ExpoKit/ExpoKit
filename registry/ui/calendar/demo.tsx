@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, type TextProps, type ViewProps } from 'react-na
 
 import { Calendar, addDays, startOfDay, toDateKey, type DateRange } from '@/components/ui/calendar';
 import { alpha, useKit } from '@/lib/kit';
+import { embedToday } from '../_embed-today';
 
 /** Controls stop at iOS's largest standard text size; content text stays uncapped. */
 const FONT_CAP = 1.35;
@@ -10,7 +11,7 @@ const FONT_CAP = 1.35;
 /** From the Expo Go viewer: `screen` = this IS the phone screen, so no mock frame; `bottomInset` = home indicator. */
 type DemoProps = { screen?: boolean; bottomInset?: number };
 
-const today = startOfDay(new Date());
+const today = startOfDay(embedToday());
 const day = (d: Date | null) => (d ? d.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' }) : '—');
 
 /** Demo card that follows the kit theme, so the docs radius / accent picker reshapes it too. In `screen` mode it is the page itself. */

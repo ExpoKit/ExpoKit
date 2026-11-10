@@ -12,7 +12,7 @@ import {
   type ViewStyle,
 } from 'react-native';
 
-import { alpha, motion, readableOn, useKit, usePanResponder } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit, usePanResponder } from '@/lib/kit';
 
 /**
  * Tabs are underline tabs with content panes. `pill` and `soft` are @deprecated and render as
@@ -57,6 +57,9 @@ export interface TabsProps {
   style?: StyleProp<ViewStyle>;
   /** Style of each content pane. */
   contentStyle?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 type Box = { x: number; w: number };
@@ -87,6 +90,7 @@ export function Tabs({
   haptics = true,
   accent,
   style,
+    className,
   contentStyle,
 }: TabsProps) {
   const { colors, radius, dark } = useKit();
@@ -389,7 +393,7 @@ export function Tabs({
   }
 
   return (
-    <View style={style}>
+    <View {...cnProps(className)} style={style}>
       <View
         onLayout={(e) => setBarW(e.nativeEvent.layout.width)}
         style={{ borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: hairline }}

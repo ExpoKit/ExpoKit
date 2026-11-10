@@ -9,9 +9,18 @@
   "summary": "A time picker as 3D wheel drums, a draggable clock dial or bookable time chips.",
   "usage": "import { useState } from 'react';\nimport { TimePicker, type TimeValue } from '@/components/ui/time-picker';\n\nconst [time, setTime] = useState<TimeValue | null>({ hours: 7, minutes: 30 });\n<TimePicker value={time} onChange={setTime} hour12 />",
   "behavior": [
-    ["Touch", "Wheel drums snap with momentum and a tapped row jumps into the band. On the clock, drag the hand anywhere on the dial; it snaps to hours, then moves on to minutes when you let go."],
-    ["Motion", "Wheel rows tilt, shrink and fade past the selection band, driven by scroll on the native driver; the clock header crossfades between hours and minutes."],
-    ["Screen readers", "Each wheel column and the clock dial are adjustable with increment / decrement actions; AM / PM and the time chips are radio groups, with booked or unavailable slots named. The sheet field is a button with expanded state."]
+    [
+      "Touch",
+      "Wheel drums snap with momentum and a tapped row jumps into the band. On the clock, drag the hand anywhere on the dial; it snaps to hours, then moves on to minutes when you let go."
+    ],
+    [
+      "Motion",
+      "Wheel rows tilt, shrink and fade past the selection band, driven by scroll on the native driver; the clock header crossfades between hours and minutes."
+    ],
+    [
+      "Screen readers",
+      "Each wheel column and the clock dial are adjustable with increment / decrement actions; AM / PM and the time chips are radio groups, with booked or unavailable slots named. The sheet field is a button with expanded state."
+    ]
   ],
   "dependencies": [
     "react-native-svg"
@@ -187,6 +196,12 @@
       "StyleProp<ViewStyle>",
       "—",
       "Style for the wheel, clock, slot grid or field wrapper, depending on variant and presentation."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ],
     [
       "fieldStyle",

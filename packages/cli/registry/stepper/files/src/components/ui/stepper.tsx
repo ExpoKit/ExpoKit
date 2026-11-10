@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 
 /**
  * 'outline' two round outlined buttons with the number between (Airbnb guests) ·
@@ -65,6 +65,9 @@ export interface StepperProps {
   buttonStyle?: StyleProp<ViewStyle> | undefined;
   /** Applied to the number (fontSize, colour, weight…). */
   valueStyle?: StyleProp<TextStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -121,6 +124,7 @@ export function Stepper({
   description,
   accessibilityLabel,
   style,
+    className,
   buttonStyle,
   valueStyle,
 }: StepperProps) {
@@ -325,7 +329,7 @@ export function Stepper({
 
   if (!title && !description) return <View style={[styles.self, style]}>{control}</View>;
   return (
-    <View style={[styles.labelled, style]}>
+    <View {...cnProps(className)} style={[styles.labelled, style]}>
       <View style={styles.texts}>
         {title ? <Text style={[styles.label, ff, { color: colors.foreground }]}>{title}</Text> : null}
         {description ? <Text style={[styles.description, ff, { color: colors.mutedForeground }]}>{description}</Text> : null}

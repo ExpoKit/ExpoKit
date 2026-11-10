@@ -157,6 +157,12 @@
       "StyleProp<ViewStyle>",
       "—",
       "Style for the avatar root; AvatarGroup applies it to its row."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ],
   "behavior": [

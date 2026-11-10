@@ -90,6 +90,12 @@
       "StyleProp<ViewStyle>",
       "—",
       "Style for the step row / column (the bar container in the bar variant)."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ]
 }

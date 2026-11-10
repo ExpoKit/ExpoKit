@@ -6,7 +6,11 @@
   "tier": "free",
   "aliases": [],
   "dependencies": [],
-  "registryDependencies": [],
-  "sharedFiles": [],
+  "registryDependencies": [
+    "kit"
+  ],
+  "sharedFiles": [
+    "lib/kit.tsx"
+  ],
   "filesDir": "confetti/files"
 }

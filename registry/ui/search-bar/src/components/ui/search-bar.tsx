@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
-import { alpha, motion, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, useKit } from '@/lib/kit';
 
 export type SearchBarVariant = 'default' | 'filled' | 'minimal';
 export type SearchBarSize = 'sm' | 'md' | 'lg';
@@ -58,6 +58,9 @@ export interface SearchBarProps extends Omit<TextInputProps, 'style'> {
   /** Rendered inside the field on the right, e.g. a mic or filter button. */
   trailing?: React.ReactNode;
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -105,6 +108,8 @@ export const SearchBar = forwardRef<ComponentRef<typeof TextInput>, SearchBarPro
     placeholder: placeholderProp,
     editable = true,
     autoFocus,
+    className,
+
     ...props
   },
   ref
@@ -252,7 +257,7 @@ export const SearchBar = forwardRef<ComponentRef<typeof TextInput>, SearchBarPro
   const iconColor = focused ? tint : minimal && !open ? colors.foreground : colors.mutedForeground;
 
   return (
-    <View style={[styles.root, !editable && styles.disabled, style]}>
+    <View {...cnProps(className)} style={[styles.root, !editable && styles.disabled, style]}>
       <View
         onLayout={(e) => setRowW(e.nativeEvent.layout.width)}
         style={[styles.row, minimal && { justifyContent: align === 'right' ? 'flex-end' : 'flex-start' }]}

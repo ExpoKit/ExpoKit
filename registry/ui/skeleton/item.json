@@ -7,10 +7,22 @@
   "summary": "Loading placeholders swept by one angled light band across the whole screen.",
   "usage": "import { Skeleton } from '@/components/ui/skeleton';\n\n<Skeleton.Group style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>\n  <Skeleton.Avatar size={44} />\n  <Skeleton.Text lines={2} style={{ flex: 1 }} />\n</Skeleton.Group>",
   "behavior": [
-    ["Motion", "Every block reads one shared native-driver clock, so the shimmer band, wave or pulse moves across a Skeleton.Group (or the window) as a single sweep."],
-    ["Reduced motion", "Every variant renders static, and Skeleton.Reveal swaps the skeleton for content instantly."],
-    ["Screen readers", "Placeholder blocks are hidden from screen readers. Skeleton.Reveal is marked busy and exposes a progressbar named by loadingLabel; the content arrives in a polite live region."],
-    ["Platforms", "Plain Animated views plus a react-native-svg gradient, so it runs the same on iOS, Android and web."]
+    [
+      "Motion",
+      "Every block reads one shared native-driver clock, so the shimmer band, wave or pulse moves across a Skeleton.Group (or the window) as a single sweep."
+    ],
+    [
+      "Reduced motion",
+      "Every variant renders static, and Skeleton.Reveal swaps the skeleton for content instantly."
+    ],
+    [
+      "Screen readers",
+      "Placeholder blocks are hidden from screen readers. Skeleton.Reveal is marked busy and exposes a progressbar named by loadingLabel; the content arrives in a polite live region."
+    ],
+    [
+      "Platforms",
+      "Plain Animated views plus a react-native-svg gradient, so it runs the same on iOS, Android and web."
+    ]
   ],
   "dependencies": [
     "react-native-svg"
@@ -102,6 +114,12 @@
       "StyleProp<ViewStyle>",
       "—",
       "Style for the block (composites apply it to their wrapper)."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ]
 }

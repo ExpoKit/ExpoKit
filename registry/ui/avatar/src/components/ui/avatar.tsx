@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Defs, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
 
-import { alpha, motion, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, useKit } from '@/lib/kit';
 
 export type AvatarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type AvatarShape = 'circle' | 'rounded';
@@ -60,6 +60,9 @@ export interface AvatarProps {
   /** Haptic tick on press (default true). */
   haptics?: boolean | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const SIZES: Record<AvatarSize, number> = { xs: 24, sm: 32, md: 40, lg: 56, xl: 72 };
@@ -132,6 +135,7 @@ export function Avatar({
   onPress,
   haptics = true,
   style,
+    className,
 }: AvatarProps) {
   const { colors, radius, dark, font } = useKit();
   const ff = font.family ? { fontFamily: font.family } : null;
@@ -470,7 +474,7 @@ export function Avatar({
   const springTo = (to: number) =>
     Animated.spring(press, { toValue: to, useNativeDriver: true, ...motion.bouncy }).start();
   return (
-    <Animated.View style={[{ transform: [{ scale: press }] }, style]}>
+    <Animated.View {...cnProps(className)} style={[{ transform: [{ scale: press }] }, style]}>
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={label}

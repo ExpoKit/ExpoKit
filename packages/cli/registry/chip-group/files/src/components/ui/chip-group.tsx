@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const CHECK = 'M5 12.5l4.5 4.5L19 7.5';
@@ -55,6 +55,9 @@ export interface ChipGroupProps {
   /** Padding at the ends of the scroll row, so chips line up with your screen gutter. */
   contentInset?: number | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -87,6 +90,7 @@ export function ChipGroup({
   accessibilityLabel,
   contentInset = 0,
   style,
+    className,
 }: ChipGroupProps) {
   const { colors } = useKit();
   const reduce = useReduceMotion();
@@ -139,7 +143,7 @@ export function ChipGroup({
   }
 
   return (
-    <View accessibilityLabel={accessibilityLabel} style={[styles.row, styles.wrap, style]}>
+    <View {...cnProps(className)} accessibilityLabel={accessibilityLabel} style={[styles.row, styles.wrap, style]}>
       {chips}
     </View>
   );

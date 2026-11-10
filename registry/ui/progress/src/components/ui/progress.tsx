@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Defs, LinearGradient, Path, Polygon, RadialGradient, Rect, Stop } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 const AnimatedPath = Animated.createAnimatedComponent(Path);
@@ -44,6 +44,9 @@ export interface ProgressProps {
   /** Animated diagonal stripes on the linear fill, for "processing" states. */
   striped?: boolean | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const BAR = { sm: 4, md: 8, lg: 12 };
@@ -106,6 +109,7 @@ export function Progress({
   celebrate = true,
   striped = false,
   style,
+    className,
 }: ProgressProps) {
   const { colors, dark, font } = useKit();
   const ff = font.family ? { fontFamily: font.family } : null;
@@ -163,7 +167,7 @@ export function Progress({
     ) : null;
 
   return (
-    <View {...a11y} style={style}>
+    <View {...cnProps(className)} {...a11y} style={style}>
       {header}
       {variant === 'steps' ? (
         <Steps

@@ -92,6 +92,12 @@
       "StyleProp<ViewStyle>",
       "—",
       "Style for the Accordion's root view (the card in the bordered variant); AccordionItem takes its own."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ]
 }

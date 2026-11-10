@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { AccessibilityInfo, Animated, Pressable, StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const CHECK = 'M5 12.5l4.5 4.5L19 7.5';
@@ -38,6 +38,9 @@ export interface RadioGroupProps {
   haptics?: boolean | undefined;
   accessibilityLabel?: string | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 /**
@@ -56,6 +59,7 @@ export function RadioGroup({
   haptics = true,
   accessibilityLabel,
   style,
+    className,
 }: RadioGroupProps) {
   const { colors, radius } = useKit();
   const reduce = useReduceMotion();
@@ -74,7 +78,7 @@ export function RadioGroup({
   const list = variant === 'segmented-list';
 
   return (
-    <View
+    <View {...cnProps(className)}
       accessibilityRole="radiogroup"
       accessibilityLabel={accessibilityLabel}
       style={[

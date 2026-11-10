@@ -25,7 +25,7 @@ import {
   type CalendarProps,
   type DateRange,
 } from '@/components/ui/calendar';
-import { alpha, defaultLabels, motion, readableOn, useKit, useLayout, usePanResponder, type Labels } from '@/lib/kit';
+import { cnProps, alpha, defaultLabels, motion, readableOn, useKit, useLayout, usePanResponder, type Labels } from '@/lib/kit';
 
 export type { DateRange } from '@/components/ui/calendar';
 export type DatePickerSize = 'sm' | 'md' | 'lg';
@@ -101,6 +101,9 @@ export interface DatePickerBaseProps {
   iconColor?: string;
   /** The sheet / dialog / popover panel — background, border, radius, padding, shadow. Don't pass `transform` or `opacity`: they animate. */
   menuStyle?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 export interface DatePickerSingleProps {
@@ -110,6 +113,9 @@ export interface DatePickerSingleProps {
   onChange?: (date: Date | null) => void;
   /** `true` for Today / Tomorrow / Next Monday / In a week / In a month, or your own list. */
   presets?: boolean | DatePickerPreset<Date>[];
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 export interface DatePickerRangeProps {
@@ -119,6 +125,9 @@ export interface DatePickerRangeProps {
   onChange?: (range: DateRange | null) => void;
   /** `true` for Today / Next 7 days / Next weekend / This month / Last 7 days / Last 30 days, or your own list. */
   presets?: boolean | DatePickerPreset<DateRange>[];
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 export type DatePickerProps = DatePickerBaseProps & (DatePickerSingleProps | DatePickerRangeProps);
@@ -222,6 +231,7 @@ export function DatePicker(props: DatePickerProps) {
     surface,
     onOpenChange,
     style,
+    className,
     fieldStyle,
     inputStyle,
     labelStyle,
@@ -549,7 +559,7 @@ export function DatePicker(props: DatePickerProps) {
   const rightIcons = (clearable && hasValue ? 30 : 0) + (ok ? 28 : 0);
 
   return (
-    <Animated.View style={[{ transform: [{ translateX: shake }] }, style]}>
+    <Animated.View {...cnProps(className)} style={[{ transform: [{ translateX: shake }] }, style]}>
       {floatingLabel ? null : (
         <Animated.Text
           numberOfLines={1}

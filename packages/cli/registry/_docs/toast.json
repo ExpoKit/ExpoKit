@@ -127,6 +127,12 @@
       "StyleProp<ViewStyle>",
       "—",
       "Style for the <Toaster> host that fills the screen and positions the stack."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ],
   "behavior": [

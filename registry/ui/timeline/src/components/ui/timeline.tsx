@@ -14,7 +14,7 @@ import {
 import Svg, { Circle, Defs, Line, LinearGradient, Path, Rect, Stop } from 'react-native-svg';
 
 import { Avatar } from '@/components/ui/avatar';
-import { alpha, isTextNode, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, isTextNode, motion, readableOn, useKit } from '@/lib/kit';
 
 export type TimelineStatus = 'done' | 'current' | 'upcoming' | 'error';
 export type TimelineVariant = 'default' | 'compact' | 'card' | 'scroll';
@@ -90,6 +90,9 @@ export interface TimelineProps {
   contentContainerStyle?: StyleProp<ViewStyle> | undefined;
   /** Root style. For 'scroll' this is the scroll view, so set a `height` (or `flex: 1` on a screen). */
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -122,6 +125,7 @@ function StaticTimeline({
   animated = true,
   surface,
   style,
+    className,
 }: TimelineProps) {
   const { colors } = useKit();
   const reduceMotion = useReduceMotion();
@@ -132,7 +136,7 @@ function StaticTimeline({
   const fillMs = Math.round(Math.min(280, 1400 / segs));
 
   return (
-    <View accessibilityRole="list" style={style}>
+    <View {...cnProps(className)} accessibilityRole="list" style={style}>
       {items.map((item, i) => {
         const next = items[i + 1];
         const status = item.status ?? 'done';

@@ -95,6 +95,12 @@
       "Style for the outer animated wrapper (margins, alignment); the pressable surface keeps its own."
     ],
     [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
+    ],
+    [
       "…PressableProps",
       "",
       "",

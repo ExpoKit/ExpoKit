@@ -13,7 +13,11 @@
   "dependencies": [
     "react-native-svg"
   ],
-  "registryDependencies": [],
-  "sharedFiles": [],
+  "registryDependencies": [
+    "kit"
+  ],
+  "sharedFiles": [
+    "lib/kit.tsx"
+  ],
   "filesDir": "grain/files"
 }

@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Defs, LinearGradient, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 
 /** The five looks. */
 export type BottomNavLook = 'minimal' | 'floating' | 'pill' | 'center-fab' | 'indicator';
@@ -97,6 +97,9 @@ export interface BottomNavProps {
   /** Selection tick on tab change, light impact on the action button (default true). */
   haptics?: boolean | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -136,6 +139,7 @@ export function BottomNav({
   homeIndicator,
   haptics = true,
   style,
+    className,
 }: BottomNavProps) {
   const { colors, radius, dark } = useKit();
   const uid = useId().replace(/[^a-zA-Z0-9]/g, '');
@@ -421,7 +425,7 @@ export function BottomNav({
   if (look === 'indicator') barStyle.push(styles.clip);
 
   return (
-    <View accessibilityRole="tablist" onLayout={notched ? onBarLayout : undefined} style={[...barStyle, style]}>
+    <View {...cnProps(className)} accessibilityRole="tablist" onLayout={notched ? onBarLayout : undefined} style={[...barStyle, style]}>
       {notched && bar.w && rowW ? (
         <BarShape
           d={notchPath(bar.w, bar.h, PAD_X + (actionIndex + 0.5) * slot, FAB / 2 + 7, FAB / 2 + 4, overhang)}

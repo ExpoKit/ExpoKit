@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
 
-import { alpha, isTextNode, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, isTextNode, motion, readableOn, useKit } from '@/lib/kit';
 
 export type ButtonVariant =
   | 'primary'
@@ -54,6 +54,9 @@ export interface ButtonProps extends Omit<PressableProps, 'style' | 'children'> 
   haptics?: boolean | undefined;
   style?: StyleProp<ViewStyle> | undefined;
   textStyle?: StyleProp<TextStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -121,6 +124,8 @@ export function Button({
   onPress,
   onPressIn,
   onPressOut,
+  className,
+
   ...props
 }: ButtonProps) {
   const { colors, radius, dark, font, shadow } = useKit();
@@ -172,7 +177,7 @@ export function Button({
   );
 
   return (
-    <Animated.View
+    <Animated.View {...cnProps(className)}
       style={[
         { transform: [{ scale }] },
         block && styles.block,

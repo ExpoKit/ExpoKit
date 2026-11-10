@@ -117,6 +117,12 @@
       "The control, or the whole row when label / description is set."
     ],
     [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
+    ],
+    [
       "buttonStyle",
       "StyleProp<ViewStyle>",
       "—",

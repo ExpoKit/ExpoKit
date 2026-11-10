@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Defs, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit } from '@/lib/kit';
 
 export type AlertVariant = 'info' | 'success' | 'warning' | 'danger';
 /**
@@ -64,6 +64,9 @@ export interface AlertProps {
   /** Screen-reader name of the dismiss button (default: the kit's `labels.dismiss`). */
   dismissLabel?: string;
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -94,6 +97,7 @@ export function Alert({
   color,
   dismissLabel,
   style,
+    className,
 }: AlertProps) {
   const { colors, radius, dark, font, labels } = useKit();
   const ff = font.family ? { fontFamily: font.family } : null;
@@ -359,7 +363,7 @@ export function Alert({
   const rowStyle = [styles.row, compact ? styles.rowCompact : null, { padding: pad }];
 
   return (
-    <Animated.View
+    <Animated.View {...cnProps(className)}
       style={[
         animating && box.h > 0
           ? { height: size.interpolate({ inputRange: [0, 1], outputRange: [0, box.h] }), overflow: 'hidden' }

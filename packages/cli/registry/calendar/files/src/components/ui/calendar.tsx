@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit, usePanResponder } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit, usePanResponder } from '@/lib/kit';
 
 export type CalendarMode = 'single' | 'range' | 'multiple';
 
@@ -66,6 +66,9 @@ export interface CalendarBaseProps {
   /** Selection and today colour (default: theme accent). */
   accent?: string | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 export interface CalendarSingleProps {
@@ -73,6 +76,9 @@ export interface CalendarSingleProps {
   value?: Date | null | undefined;
   defaultValue?: Date | null | undefined;
   onChange?: ((date: Date) => void) | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 export interface CalendarRangeProps {
@@ -81,6 +87,9 @@ export interface CalendarRangeProps {
   defaultValue?: DateRange | null | undefined;
   /** Fires on every tap: first with `{ start, end: null }`, then with both ends. */
   onChange?: ((range: DateRange) => void) | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 export interface CalendarMultipleProps {
@@ -88,6 +97,9 @@ export interface CalendarMultipleProps {
   value?: Date[] | undefined;
   defaultValue?: Date[] | undefined;
   onChange?: ((dates: Date[]) => void) | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 export type CalendarProps = CalendarBaseProps & (CalendarSingleProps | CalendarRangeProps | CalendarMultipleProps);
@@ -204,6 +216,7 @@ export function Calendar(props: CalendarProps) {
     max,
     accent,
     style,
+    className,
   } = props as unknown as FlatProps;
   const { colors, radius, font, labels } = useKit();
   const ff = font.family ? { fontFamily: font.family } : null;
@@ -366,7 +379,7 @@ export function Calendar(props: CalendarProps) {
   const tileR = tileRadius(radius.md);
 
   return (
-    <View style={[styles.root, style]} onLayout={(e: LayoutChangeEvent) => setWidth(e.nativeEvent.layout.width)}>
+    <View {...cnProps(className)} style={[styles.root, style]} onLayout={(e: LayoutChangeEvent) => setWidth(e.nativeEvent.layout.width)}>
       <View style={styles.header}>
         <Pressable
           onPress={monthPicker ? () => switchView(view === 'days' ? 'months' : view === 'months' ? 'years' : 'days') : undefined}
@@ -537,6 +550,9 @@ interface MonthGridProps {
   fullLabel: (d: Date) => string;
   reduce: boolean;
   onDayPress: (d: Date) => void;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const MonthGrid = memo(function MonthGrid({
@@ -640,6 +656,9 @@ interface DayCellProps {
   tint: string;
   reduce: boolean;
   onPress: (d: Date) => void;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const DayCell = memo(function DayCell({

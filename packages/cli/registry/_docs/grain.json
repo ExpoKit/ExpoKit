@@ -44,6 +44,12 @@
       "Root style; give it a size or flex: 1."
     ],
     [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
+    ],
+    [
       "GrainOverlay grain",
       "number",
       "0.55",

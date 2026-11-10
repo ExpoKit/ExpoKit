@@ -18,9 +18,18 @@ import {
 
 /**
  * Bumped whenever components start using a new kit API (2: radius.scale / radius.capsule,
- * 3: useLayout / shadow, 4: labels, 5: visible labels such as Cancel / Done / Today, AM / PM, usePanResponder / useLatest). The CLI won't keep an edited kit.tsx older than the component being added needs.
+ * 3: useLayout / shadow, 4: labels, 5: visible labels such as Cancel / Done / Today, AM / PM, usePanResponder / useLatest,
+ * 6: cnProps / optional className on components for NativeWind or Uniwind). The CLI won't keep an edited kit.tsx older than the component being added needs.
  */
-export const KIT_VERSION = 5;
+export const KIT_VERSION = 6;
+
+/** Optional Tailwind classes when NativeWind or Uniwind is installed; use `style` otherwise. */
+export type KitClassName = { className?: string | undefined };
+
+/** Spread on the root View / Pressable. Harmless when className is undefined; needs NativeWind for an effect. */
+export function cnProps(className?: string) {
+  return className ? ({ className } as { className: string }) : {};
+}
 
 export type ColorScheme = 'light' | 'dark';
 

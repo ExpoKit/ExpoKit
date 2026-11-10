@@ -8,22 +8,87 @@
   "summary": "Confetti that flies on real arcs with gravity and drag, then flutters as it falls.",
   "usage": "import { useState } from 'react';\nimport { Confetti } from '@/components/ui/confetti';\n\nconst [orders, setOrders] = useState(0);\n<Confetti trigger={orders} origin=\"bottom\" />",
   "behavior": [
-    ["Motion", "Each burst launches pieces with velocity, gravity and air drag, all moved by one native-driven animation. Bursts can overlap."],
-    ["Touch", "The overlay fills its parent and never takes touches."],
-    ["Reduced motion", "Bursts launch a quarter of the pieces."],
-    ["Screen readers", "The overlay is hidden from assistive tech."]
+    [
+      "Motion",
+      "Each burst launches pieces with velocity, gravity and air drag, all moved by one native-driven animation. Bursts can overlap."
+    ],
+    [
+      "Touch",
+      "The overlay fills its parent and never takes touches."
+    ],
+    [
+      "Reduced motion",
+      "Bursts launch a quarter of the pieces."
+    ],
+    [
+      "Screen readers",
+      "The overlay is hidden from assistive tech."
+    ]
   ],
   "dependencies": [],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "kit"
+  ],
   "props": [
-    ["count", "number", "80", "Pieces per burst (max 160)."],
-    ["colors", "string[]", "vivid mix", "Piece colours."],
-    ["origin", "\"top\" | \"center\" | \"bottom\"", "\"bottom\"", "Rain from the top, pop outward, or two cannons from the bottom corners."],
-    ["duration", "number", "2600", "How long a burst lasts, in ms."],
-    ["trigger", "unknown", "—", "Fire a burst whenever this value changes — no ref needed."],
-    ["autoplay", "boolean", "false", "Fire once on mount."],
-    ["onDone", "() => void", "—", "A burst finished."],
-    ["ref.burst(options?)", "{ origin?, x?, y?, count?, colors? }", "—", "Fire a burst (they can overlap); x / y place a center burst."],
-    ["style", "StyleProp<ViewStyle>", "fills its parent", "The overlay never takes touches."]
+    [
+      "count",
+      "number",
+      "80",
+      "Pieces per burst (max 160)."
+    ],
+    [
+      "colors",
+      "string[]",
+      "vivid mix",
+      "Piece colours."
+    ],
+    [
+      "origin",
+      "\"top\" | \"center\" | \"bottom\"",
+      "\"bottom\"",
+      "Rain from the top, pop outward, or two cannons from the bottom corners."
+    ],
+    [
+      "duration",
+      "number",
+      "2600",
+      "How long a burst lasts, in ms."
+    ],
+    [
+      "trigger",
+      "unknown",
+      "—",
+      "Fire a burst whenever this value changes — no ref needed."
+    ],
+    [
+      "autoplay",
+      "boolean",
+      "false",
+      "Fire once on mount."
+    ],
+    [
+      "onDone",
+      "() => void",
+      "—",
+      "A burst finished."
+    ],
+    [
+      "ref.burst(options?)",
+      "{ origin?, x?, y?, count?, colors? }",
+      "—",
+      "Fire a burst (they can overlap); x / y place a center burst."
+    ],
+    [
+      "style",
+      "StyleProp<ViewStyle>",
+      "fills its parent",
+      "The overlay never takes touches."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
+    ]
   ]
 }

@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import Svg, { Defs, LinearGradient, RadialGradient, Rect, Stop } from 'react-native-svg';
 
-import { motion, usePanResponder } from '@/lib/kit';
+import { cnProps, motion, usePanResponder } from '@/lib/kit';
 
 /** `holo` adds a rainbow foil sheen that shifts as the card tilts (always faintly visible). */
 export type TiltCardGlare = 'soft' | 'sharp' | 'holo' | 'none';
@@ -68,6 +68,9 @@ export interface TiltCardProps {
   accessibilityLabel?: string | undefined;
   /** Width, height, margins — applied to the card's outer box. */
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 export interface TiltLayerProps {
@@ -259,6 +262,7 @@ export function TiltCard({
   onPress,
   accessibilityLabel,
   style,
+    className,
 }: TiltCardProps) {
   const reduce = useReduceMotion();
   const [size, setSize] = useState({ w: 0, h: 0 });

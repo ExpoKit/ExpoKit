@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit, usePanResponder } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit, usePanResponder } from '@/lib/kit';
 
 /**
  * - `default` — thin track with a round thumb (iOS / Material).
@@ -80,6 +80,9 @@ interface SliderBaseProps {
   thumbStyle?: StyleProp<ViewStyle>;
   /** The value text: tooltip, in-bar value and min / max labels. */
   labelStyle?: StyleProp<TextStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 /** One thumb: `value` is a number. */
@@ -91,6 +94,9 @@ export interface SliderSingleProps extends SliderBaseProps {
   onValueChange?: (value: number) => void;
   onSlidingStart?: (value: number) => void;
   onSlidingComplete?: (value: number) => void;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 /** Two thumbs selecting a span: `value` is `[from, to]`. */
@@ -101,6 +107,9 @@ export interface SliderRangeProps extends SliderBaseProps {
   onValueChange?: (value: [number, number]) => void;
   onSlidingStart?: (value: [number, number]) => void;
   onSlidingComplete?: (value: [number, number]) => void;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 export type SliderProps = SliderSingleProps | SliderRangeProps;
@@ -142,7 +151,7 @@ const pick = <T,>(pair: readonly [T, T], i: number): T => (i === 1 ? pair[1] : p
  * labels, icons and a histogram for filters.
  */
 export function Slider(props: SliderProps) {
-  const {
+    const {
     min = 0,
     max = 100,
     step = 1,
@@ -163,6 +172,7 @@ export function Slider(props: SliderProps) {
     accent,
     accessibilityLabel,
     style,
+    className,
     trackStyle,
     fillStyle,
     thumbStyle,
@@ -451,7 +461,7 @@ export function Slider(props: SliderProps) {
   );
 
   return (
-    <View
+    <View {...cnProps(className)}
       style={[styles.root, { paddingTop: reserve, opacity: disabled ? 0.45 : 1 }, style]}
       accessible={!range}
       accessibilityRole={!range ? 'adjustable' : undefined}

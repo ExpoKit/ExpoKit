@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
-import { alpha, motion, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, useKit } from '@/lib/kit';
 
 export type TextareaVariant = 'outlined' | 'filled';
 
@@ -72,6 +72,9 @@ export interface TextareaProps extends Omit<TextInputProps, 'style' | 'multiline
   messageStyle?: StyleProp<TextStyle>;
   /** The character counter (`42/280` and the characters-left number). Warning / danger colours still win near the limit. */
   counterStyle?: StyleProp<TextStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 /** Everything that scales with `size`. */
@@ -133,6 +136,8 @@ export const Textarea = forwardRef<ComponentRef<typeof TextInput>, TextareaProps
     onBlur,
     placeholder,
     editable = true,
+    className,
+
     ...props
   },
   ref
@@ -266,7 +271,7 @@ export const Textarea = forwardRef<ComponentRef<typeof TextInput>, TextareaProps
   const toneColor = tone === 'error' ? colors.danger : tone === 'success' ? colors.success : colors.mutedForeground;
 
   return (
-    <Animated.View style={[{ transform: [{ translateX: shake }] }, style]}>
+    <Animated.View {...cnProps(className)} style={[{ transform: [{ translateX: shake }] }, style]}>
       {topLabel ? (
         <Animated.Text
           numberOfLines={1}

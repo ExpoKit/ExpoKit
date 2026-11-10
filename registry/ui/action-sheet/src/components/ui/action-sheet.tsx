@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit, useLayout, usePanResponder } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit, useLayout, usePanResponder } from '@/lib/kit';
 
 /**
  * `inset` — iOS: grouped rounded cards floating above the home indicator, with a separate Cancel card (default).
@@ -101,6 +101,9 @@ export interface ActionSheetProps {
   /** Light impact on open, selection tick on picking an action (default true). */
   haptics?: boolean;
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 // Controls stop growing at iOS's largest standard text size (xxxL ≈ 1.35×) so they keep their shape;
@@ -135,6 +138,7 @@ export function ActionSheet({
   dismissible = true,
   haptics = true,
   style,
+    className,
 }: ActionSheetProps) {
   const { colors, radius, dark, font, labels } = useKit();
   const cancelLabel = cancelLabelProp === undefined ? labels.cancel : cancelLabelProp; // null hides it
@@ -402,7 +406,7 @@ export function ActionSheet({
 
   return (
     <Modal visible={mounted} transparent animationType="none" statusBarTranslucent onRequestClose={dismiss}>
-      <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: colors.overlay, opacity: scrim }]}>
+      <Animated.View {...cnProps(className)} style={[StyleSheet.absoluteFill, { backgroundColor: colors.overlay, opacity: scrim }]}>
         <Pressable
           style={StyleSheet.absoluteFill}
           onPress={dismiss}

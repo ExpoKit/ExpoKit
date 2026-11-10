@@ -31,7 +31,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { scheduleOnRN } from 'react-native-worklets';
 
-import { alpha, motion, useKit, useLayout } from '@/lib/kit';
+import { cnProps, alpha, motion, useKit, useLayout } from '@/lib/kit';
 
 export type SnapPoint = number | `${number}%`;
 
@@ -106,6 +106,9 @@ export interface BottomSheetProps {
 
   contentStyle?: StyleProp<ViewStyle> | undefined;
 
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 
@@ -163,6 +166,7 @@ export function BottomSheet({
   accessibilityLabel,
   children,
   style,
+    className,
   contentStyle,
 }: BottomSheetProps) {
   const { colors, radius, dark, font, labels } = useKit();
@@ -483,7 +487,7 @@ export function BottomSheet({
     >
       {/* A Modal is its own native root, so gestures inside it need their own handler root. */}
       <GestureHandlerRootView style={StyleSheet.absoluteFill}>
-        <View ref={rootRef} style={StyleSheet.absoluteFill} pointerEvents="box-none">
+        <View {...cnProps(className)} ref={rootRef} style={StyleSheet.absoluteFill} pointerEvents="box-none">
           <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: colors.overlay }, dimStyle]}>
             <Pressable
               style={StyleSheet.absoluteFill}

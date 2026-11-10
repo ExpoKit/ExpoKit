@@ -85,6 +85,12 @@
       "StyleProp<ViewStyle>",
       "—",
       "Style for the wrapping row (the ScrollView when scrollable)."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ],
   "behavior": [

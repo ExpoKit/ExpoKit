@@ -21,7 +21,7 @@ import Animated, {
 import { scheduleOnRN } from 'react-native-worklets';
 import Svg, { Circle, Defs, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
 
-import { alpha, motion, readableOn, useKit, type Colors } from '@/lib/kit';
+import { cnProps, alpha, motion, readableOn, useKit, type Colors } from '@/lib/kit';
 
 // ─── Store ────────────────────────────────────────────────────────────────────
 
@@ -302,6 +302,9 @@ export interface ToasterProps {
 
   style?: StyleProp<ViewStyle> | undefined;
 
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 interface Insets {
@@ -359,6 +362,7 @@ export function Toaster({
   closeButton = false,
   haptics = true,
   style,
+    className,
 }: ToasterProps) {
   const store = useToastStore();
   const insets = useSafeInsets(safeArea);
@@ -471,6 +475,9 @@ interface ToastItemProps {
   onHeight: (h: number) => void;
   onPress: () => void;
   onRemoved: () => void;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 function rubber(d: number) {
@@ -709,6 +716,9 @@ interface IslandToasterProps {
   haptics: boolean;
   reduceMotion: boolean;
   style?: StyleProp<ViewStyle> | undefined;
+
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
 
 }
 

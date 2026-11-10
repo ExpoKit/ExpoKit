@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 
-import { alpha, isTextNode, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, isTextNode, readableOn, useKit } from '@/lib/kit';
 
 export type ListItemSize = 'sm' | 'md' | 'lg';
 
@@ -96,6 +96,9 @@ export interface ListItemProps {
   titleStyle?: StyleProp<TextStyle> | undefined;
   accessibilityLabel?: string | undefined;
   style?: StyleProp<ViewStyle> | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 const SIZES: Record<ListItemSize, { minH: number; tile: number; glyph: number; avatar: number; title: number; sub: number; padY: number }> = {
@@ -142,6 +145,7 @@ export function ListItem({
   titleStyle,
   accessibilityLabel,
   style,
+    className,
 }: ListItemProps) {
   const { colors, radius, font, labels } = useKit();
   const ff = font.family ? { fontFamily: font.family } : null;
@@ -249,7 +253,7 @@ export function ListItem({
   }
 
   return (
-    <Pressable
+    <Pressable {...cnProps(className)}
       onPress={onPress}
       onLongPress={onLongPress}
       disabled={disabled}

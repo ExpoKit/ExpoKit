@@ -16,7 +16,7 @@ import {
 } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 
-import { alpha, motion, useKit } from '@/lib/kit';
+import { cnProps, alpha, motion, useKit } from '@/lib/kit';
 
 export type FloatingInputVariant = 'outlined' | 'filled' | 'underline';
 
@@ -78,6 +78,9 @@ export interface FloatingInputProps extends Omit<TextInputProps, 'style' | 'plac
   counterStyle?: StyleProp<TextStyle> | undefined;
   /** Built-in icons at rest — the clear button (default: theme mutedForeground). */
   iconColor?: string | undefined;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 /** Everything that scales with `size`: height, type, padding, icons and the floated label. */
@@ -165,6 +168,8 @@ export const FloatingInput = forwardRef<ComponentRef<typeof TextInput>, Floating
     onBlur,
     maxLength,
     editable = true,
+    className,
+
     ...props
   },
   ref
@@ -290,7 +295,7 @@ export const FloatingInput = forwardRef<ComponentRef<typeof TextInput>, Floating
   const showCounter = counter && maxLength !== undefined;
 
   return (
-    <Animated.View style={[{ transform: [{ translateX: shake }] }, style]}>
+    <Animated.View {...cnProps(className)} style={[{ transform: [{ translateX: shake }] }, style]}>
       {floatingLabel ? null : (
         <Animated.Text
           numberOfLines={1}

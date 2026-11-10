@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AccessibilityInfo, Animated, Pressable, StyleSheet, Text, View, type StyleProp, type ViewStyle } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
-import { alpha, readableOn, useKit } from '@/lib/kit';
+import { cnProps, alpha, readableOn, useKit } from '@/lib/kit';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const CHECK = 'M5 12.5l4.5 4.5L19 7.5';
@@ -22,6 +22,9 @@ export interface CheckboxProps {
   /** 'square' (default) or 'circle'. */
   shape?: 'square' | 'circle';
   style?: StyleProp<ViewStyle>;
+  /** Tailwind classes on the root (NativeWind / Uniwind). */
+  className?: string | undefined;
+
 }
 
 /** Checkbox whose tick draws itself in, with a squishy press and a burst ring. */
@@ -37,6 +40,7 @@ export function Checkbox({
   disabled,
   shape = 'square',
   style,
+    className,
 }: CheckboxProps) {
   const { colors, radius, font } = useKit();
   const reduce = useReduceMotion();
@@ -76,7 +80,7 @@ export function Checkbox({
   const muted = colors.mutedForeground;
 
   return (
-    <Pressable
+    <Pressable {...cnProps(className)}
       accessibilityRole="checkbox"
       accessibilityState={{ checked: on, disabled }}
       disabled={disabled}
