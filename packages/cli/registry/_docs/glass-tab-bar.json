@@ -67,6 +67,12 @@
       "Style of the outer row. The bar does not position itself — place it (e.g. absolute, bottom: insets.bottom + 8)."
     ],
     [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
+    ],
+    [
       "GLASS_TAB_BAR_HEIGHT",
       "number",
       "62",

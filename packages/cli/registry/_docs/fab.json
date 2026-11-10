@@ -115,6 +115,12 @@
       "StyleProp<ViewStyle>",
       "—",
       "Style for the absolutely positioned stack holding the main button and list actions."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ],
   "behavior": [

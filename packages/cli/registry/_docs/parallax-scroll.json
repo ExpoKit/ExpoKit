@@ -99,6 +99,12 @@
       "Style for the outer frame (size, margins, radius). Fills its parent by default."
     ],
     [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
+    ],
+    [
       "onScroll",
       "(e) => void",
       "—",

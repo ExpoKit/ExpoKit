@@ -43,11 +43,11 @@
   "homepage": "https://expokit.in",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Anshkaran7/expokit.git",
+    "url": "git+https://github.com/ExpoKit/ExpoKit.git",
     "directory": "packages/cli"
   },
   "bugs": {
-    "url": "https://github.com/Anshkaran7/expokit/issues"
+    "url": "https://github.com/ExpoKit/ExpoKit/issues"
   },
   "funding": {
     "type": "github",

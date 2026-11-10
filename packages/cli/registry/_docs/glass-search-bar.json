@@ -81,6 +81,12 @@
       "Row holding the pill and the cancel button."
     ],
     [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
+    ],
+    [
       "…TextInputProps",
       "",
       "",

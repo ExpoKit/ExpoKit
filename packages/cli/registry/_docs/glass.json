@@ -73,6 +73,12 @@
       "StyleProp<ViewStyle>",
       "—",
       "Size, padding and layout."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ],
   "behavior": [

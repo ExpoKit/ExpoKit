@@ -73,6 +73,12 @@
       "Outer style: margins, position, width or flex (buttons hug their content by default)."
     ],
     [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
+    ],
+    [
       "GlassToolbar items",
       "{ key, icon, label, onPress?, active?, disabled? }[]",
       "—",

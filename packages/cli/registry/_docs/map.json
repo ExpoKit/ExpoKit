@@ -121,6 +121,12 @@
       "(coordinates, t) => { coordinate, bearing }",
       "—",
       "Point and heading part-way along a line."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind. Prefer style for StyleSheet overrides."
     ]
   ],
   "behavior": [
