@@ -2,7 +2,7 @@ name: Scorecard
 
 # OpenSSF Scorecard: grades this repo's supply-chain security (pinned actions, token permissions, branch
 # protection, SAST, signed releases…) and publishes the result for the README badge, deps.dev and
-# https://scorecard.dev/viewer/?uri=github.com/Anshkaran7/expokit. Findings show under Security → Code scanning.
+# https://scorecard.dev/viewer/?uri=github.com/ExpoKit/ExpoKit. Findings show under Security → Code scanning.
 on:
   branch_protection_rule:
   schedule:
