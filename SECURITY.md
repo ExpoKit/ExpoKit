@@ -4,7 +4,7 @@
 
 Please don't report security problems in public issues.
 
-Report them privately with GitHub's [Report a vulnerability](https://github.com/Anshkaran7/expokit/security/advisories/new)
+Report them privately with GitHub's [Report a vulnerability](https://github.com/ExpoKit/ExpoKit/security/advisories/new)
 form, or email work@karandev.in (or use https://expokit.in/support) with "Security" in the subject — what you found, how to
 reproduce it and what it affects (a component, the CLI, `expo-kit login` / tokens, or the website). You'll get a reply
 within a few days, and a fix and credit (if you'd like it) once it is released.
@@ -18,7 +18,7 @@ The latest published version of `@expokit/cli` and `expo-charts`, and the compon
 - `@expokit/cli` and `expo-charts` are published to npm by the maintainer, from the code on `main` in this repository.
 - Both packages have no runtime dependencies and no install scripts.
 - Every change runs CI, [CodeQL](.github/workflows/codeql.yml) and
-  [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Anshkaran7/expokit). GitHub Actions are pinned to
+  [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/ExpoKit/ExpoKit). GitHub Actions are pinned to
   commit SHAs and run with read-only tokens unless a job needs more.
 
 ## What the CLI does on your machine

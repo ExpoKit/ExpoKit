@@ -19,8 +19,8 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/@expokit/cli"><img src="https://img.shields.io/npm/v/@expokit/cli?label=%40expokit%2Fcli" alt="@expokit/cli on npm"></a>
   <a href="https://www.npmjs.com/package/expo-charts"><img src="https://img.shields.io/npm/v/expo-charts?label=expo-charts" alt="expo-charts on npm"></a>
-  <a href="https://github.com/Anshkaran7/expokit/actions/workflows/ci.yml"><img src="https://github.com/Anshkaran7/expokit/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://scorecard.dev/viewer/?uri=github.com/Anshkaran7/expokit"><img src="https://api.scorecard.dev/projects/github.com/Anshkaran7/expokit/badge" alt="OpenSSF Scorecard"></a>
+  <a href="https://github.com/ExpoKit/ExpoKit/actions/workflows/ci.yml"><img src="https://github.com/ExpoKit/ExpoKit/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://scorecard.dev/viewer/?uri=github.com/ExpoKit/ExpoKit"><img src="https://api.scorecard.dev/projects/github.com/ExpoKit/ExpoKit/badge" alt="OpenSSF Scorecard"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT license"></a>
 </p>
 
@@ -65,6 +65,7 @@ into your app. You get readable, typed files you own and can change however you 
 | `packages/cli` | `@expokit/cli`, the CLI that adds components to your app |
 | `packages/charts` | `expo-charts`, animated and interactive charts |
 | `skills/`, `.claude-plugin/` | The ExpoKit skill and Claude Code plugin |
+| `CONTRIBUTING.md`, `docs/` | How to report bugs, submit patches and use AI tools with ExpoKit |
 
 [ExpoKit Pro](https://expokit.in/pricing) adds 3D and Liquid Glass components, full-screen blocks and more
 charts. Pro source is not in this repository.
@@ -74,10 +75,15 @@ charts. Pro source is not in this repository.
 Installation, live previews, props, theming and AI setup for every component:
 **[expokit.in/docs](https://expokit.in/docs)**
 
+## Contributing
+
+This is a **read-only mirror**: pull requests from forks are closed. Read
+**[CONTRIBUTING.md](https://github.com/ExpoKit/ExpoKit/blob/main/CONTRIBUTING.md)** — bugs, component requests and patches
+via issues ([submit a patch](https://github.com/ExpoKit/ExpoKit/issues/new?template=submit_patch.yml)).
+
 ## Feedback
 
-This repository is a read-only mirror of ExpoKit, so pull requests are closed automatically. Found a bug or want a
-component? [Open an issue](https://github.com/Anshkaran7/expokit/issues/new/choose).
+Found a bug or want a component? [Open an issue](https://github.com/ExpoKit/ExpoKit/issues/new/choose).
 
 ## Security
 
@@ -85,7 +91,7 @@ component? [Open an issue](https://github.com/Anshkaran7/expokit/issues/new/choo
   has peer dependencies), and neither runs install scripts.
 - **Source in the open** — every published version is built from the code in this repository.
 - **Checked continuously** — CI, [CodeQL](.github/workflows/codeql.yml) and
-  [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/Anshkaran7/expokit) run on every change.
+  [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/ExpoKit/ExpoKit) run on every change.
 
 Found a vulnerability? Please report it privately — see [SECURITY.md](SECURITY.md).
 
