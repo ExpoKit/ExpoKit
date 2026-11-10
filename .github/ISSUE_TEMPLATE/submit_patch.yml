@@ -1,0 +1,38 @@
+name: Submit a patch
+description: Share a fix or improvement for a free component, the CLI or expo-charts (not a direct PR).
+labels: [patch]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Pull requests from forks are closed on this mirror — paste your diff here or link a branch/gist.
+        See [CONTRIBUTING.md](https://github.com/ExpoKit/ExpoKit/blob/main/CONTRIBUTING.md).
+  - type: input
+    id: target
+    attributes:
+      label: What are you changing?
+      placeholder: button component, @expokit/cli add command, expo-charts AreaChart
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: patch
+    attributes:
+      label: Patch or link
+      description: Unified diff, gist URL, or link to a branch on your fork.
+      render: shell
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Agreement
+      options:
+        - label: I confirm this change is only for free/MIT code in this repository (no Pro-only items).
+          required: true

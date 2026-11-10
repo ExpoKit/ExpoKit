@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Contributing guide
+    url: https://github.com/ExpoKit/ExpoKit/blob/main/CONTRIBUTING.md
+    about: How to report bugs, request components and submit patches to this mirror.
   - name: Docs
     url: https://expokit.in/docs
     about: Installation, theming, the CLI and every component's props.
