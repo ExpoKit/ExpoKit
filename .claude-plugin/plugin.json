@@ -3,7 +3,7 @@
   "description": "Find, add and use ExpoKit components in Expo / React Native apps (skill + MCP server).",
   "author": { "name": "Anshkaran7" },
   "homepage": "https://expokit.in",
-  "repository": "https://github.com/Anshkaran7/expokit",
+  "repository": "https://github.com/ExpoKit/ExpoKit",
   "license": "MIT",
   "keywords": ["expo", "react-native", "ui", "components", "mcp"]
 }
