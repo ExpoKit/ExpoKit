@@ -1,7 +1,12 @@
 {
   "name": "cube-pager",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "cube-carousel",
+    "cube-transition",
+    "3d-pager",
+    "stories-cube"
+  ],
   "exportName": "CubePager",
   "files": [
     "src/components/ui/cube-pager.tsx"

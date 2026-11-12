@@ -1,7 +1,11 @@
 {
   "name": "onboarding",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "intro-slides",
+    "walkthrough",
+    "welcome-slides"
+  ],
   "exportName": "Onboarding",
   "files": [
     "src/components/blocks/onboarding.tsx"

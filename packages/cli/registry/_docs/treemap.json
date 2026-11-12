@@ -1,7 +1,9 @@
 {
   "name": "treemap",
   "category": "Charts",
-  "aliases": [],
+  "aliases": [
+    "tree-map"
+  ],
   "exportName": "TreemapChart",
   "files": [
     "src/components/charts/treemap.tsx"

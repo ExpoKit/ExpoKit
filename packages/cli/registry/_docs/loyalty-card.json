@@ -1,7 +1,11 @@
 {
   "name": "loyalty-card",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "stamp-card",
+    "rewards-card",
+    "membership-card"
+  ],
   "exportName": "LoyaltyCard",
   "files": [
     "src/components/ui/loyalty-card.tsx"

@@ -1,7 +1,11 @@
 {
   "name": "carousel",
   "category": "Display",
-  "aliases": [],
+  "aliases": [
+    "image-carousel",
+    "swiper",
+    "gallery"
+  ],
   "exportName": "Carousel",
   "files": [
     "src/components/ui/carousel.tsx"

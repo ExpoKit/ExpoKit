@@ -1,7 +1,11 @@
 {
   "name": "ring-carousel",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "3d-carousel",
+    "circular-carousel",
+    "rotating-carousel"
+  ],
   "exportName": "RingCarousel",
   "files": [
     "src/components/ui/ring-carousel.tsx"

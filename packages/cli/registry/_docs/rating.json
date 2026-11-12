@@ -1,7 +1,12 @@
 {
   "name": "rating",
   "category": "Selection",
-  "aliases": [],
+  "aliases": [
+    "star-rating",
+    "stars",
+    "review-stars",
+    "heart-rating"
+  ],
   "exportName": "Rating",
   "files": [
     "src/components/ui/rating.tsx"

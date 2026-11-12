@@ -1,7 +1,10 @@
 {
   "name": "ticket-card",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "boarding-pass",
+    "event-ticket"
+  ],
   "exportName": "TicketCard",
   "files": [
     "src/components/ui/ticket-card.tsx"

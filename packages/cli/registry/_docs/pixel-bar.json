@@ -1,7 +1,10 @@
 {
   "name": "pixel-bar",
   "category": "Charts",
-  "aliases": [],
+  "aliases": [
+    "square-bar-chart",
+    "grid-bar-chart"
+  ],
   "exportName": "PixelBarChart",
   "files": [
     "src/components/charts/pixel-bar.tsx"

@@ -1,7 +1,11 @@
 {
   "name": "donut-shop",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "product-detail",
+    "food-menu",
+    "product-carousel"
+  ],
   "exportName": "DonutShop",
   "files": [
     "src/components/blocks/donut-shop.tsx"

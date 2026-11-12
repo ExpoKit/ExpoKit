@@ -1,7 +1,11 @@
 {
   "name": "polar-area",
   "category": "Charts",
-  "aliases": [],
+  "aliases": [
+    "nightingale-rose",
+    "rose-chart",
+    "coxcomb-chart"
+  ],
   "exportName": "PolarAreaChart",
   "files": [
     "src/components/charts/polar-area.tsx"

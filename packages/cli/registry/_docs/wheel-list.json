@@ -1,7 +1,12 @@
 {
   "name": "wheel-list",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "wheel-picker",
+    "picker-wheel",
+    "ios-picker",
+    "scroll-picker"
+  ],
   "exportName": "WheelList",
   "files": [
     "src/components/ui/wheel-list.tsx"

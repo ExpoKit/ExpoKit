@@ -1,7 +1,12 @@
 {
   "name": "slide-to-confirm",
   "category": "Buttons",
-  "aliases": [],
+  "aliases": [
+    "swipe-button",
+    "slide-to-pay",
+    "slide-to-unlock",
+    "swipe-to-confirm"
+  ],
   "exportName": "SlideToConfirm",
   "files": [
     "src/components/ui/slide-to-confirm.tsx"

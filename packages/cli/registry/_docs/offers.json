@@ -1,7 +1,11 @@
 {
   "name": "offers",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "coupons",
+    "apply-coupon",
+    "promo-codes"
+  ],
   "exportName": "Offers",
   "files": [
     "src/components/blocks/offers.tsx"

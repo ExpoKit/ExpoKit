@@ -1,7 +1,10 @@
 {
   "name": "fab",
   "category": "Buttons",
-  "aliases": [],
+  "aliases": [
+    "floating-action-button",
+    "speed-dial"
+  ],
   "exportName": "Fab",
   "files": [
     "src/components/ui/fab.tsx"

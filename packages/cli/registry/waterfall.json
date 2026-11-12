@@ -4,7 +4,10 @@
   "title": "Waterfall",
   "description": "Increases and decreases with dashed connectors and running-total bars. Built on expo-charts.",
   "tier": "pro",
-  "aliases": [],
+  "aliases": [
+    "waterfall-chart",
+    "bridge-chart"
+  ],
   "dependencies": [
     "expo-charts",
     "react-native-svg"

@@ -1,7 +1,11 @@
 {
   "name": "orb-reveal",
   "category": "Motion",
-  "aliases": [],
+  "aliases": [
+    "glass-orb",
+    "pull-to-reveal",
+    "liquid-glass-reveal"
+  ],
   "exportName": "OrbReveal",
   "files": [
     "src/components/ui/orb-reveal.tsx"

@@ -1,7 +1,10 @@
 {
   "name": "bullet",
   "category": "Charts",
-  "aliases": [],
+  "aliases": [
+    "bullet-chart",
+    "kpi-bar"
+  ],
   "exportName": "BulletChart",
   "files": [
     "src/components/charts/bullet.tsx"

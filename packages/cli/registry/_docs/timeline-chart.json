@@ -1,7 +1,10 @@
 {
   "name": "timeline-chart",
   "category": "Charts",
-  "aliases": [],
+  "aliases": [
+    "gantt-chart",
+    "gantt"
+  ],
   "exportName": "TimelineChart",
   "files": [
     "src/components/charts/timeline-chart.tsx"

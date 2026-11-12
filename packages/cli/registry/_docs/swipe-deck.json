@@ -1,7 +1,11 @@
 {
   "name": "swipe-deck",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "tinder-swipe",
+    "swipe-cards",
+    "card-swiper"
+  ],
   "exportName": "SwipeDeck",
   "files": [
     "src/components/ui/swipe-deck.tsx"

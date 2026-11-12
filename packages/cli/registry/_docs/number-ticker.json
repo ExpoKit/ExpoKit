@@ -1,7 +1,12 @@
 {
   "name": "number-ticker",
   "category": "Motion",
-  "aliases": [],
+  "aliases": [
+    "animated-number",
+    "counter",
+    "odometer",
+    "count-up"
+  ],
   "exportName": "NumberTicker",
   "files": [
     "src/components/ui/number-ticker.tsx"

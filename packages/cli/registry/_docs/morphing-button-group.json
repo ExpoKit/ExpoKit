@@ -1,7 +1,14 @@
 {
   "name": "morphing-button-group",
   "category": "Buttons",
-  "aliases": [],
+  "aliases": [
+    "signature-pad",
+    "signature",
+    "e-signature",
+    "signature-capture",
+    "button-group",
+    "split-button"
+  ],
   "exportName": "MorphingButtonGroup",
   "files": [
     "src/components/ui/morphing-button-group.tsx"

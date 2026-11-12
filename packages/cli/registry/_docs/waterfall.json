@@ -1,7 +1,10 @@
 {
   "name": "waterfall",
   "category": "Charts",
-  "aliases": [],
+  "aliases": [
+    "waterfall-chart",
+    "bridge-chart"
+  ],
   "exportName": "WaterfallChart",
   "files": [
     "src/components/charts/waterfall.tsx"

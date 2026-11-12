@@ -1,7 +1,10 @@
 {
   "name": "qr-code-button",
   "category": "Buttons",
-  "aliases": [],
+  "aliases": [
+    "qr-code",
+    "qr-code-generator"
+  ],
   "exportName": "QrCodeButton",
   "files": [
     "src/components/ui/qr-code-button.tsx"

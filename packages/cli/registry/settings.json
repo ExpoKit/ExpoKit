@@ -4,7 +4,10 @@
   "title": "Settings",
   "description": "An iOS-style grouped settings screen: profile header with a Pro badge, System / Light / Dark picker, animated switches, chevron rows with details and a destructive sign-out row.",
   "tier": "pro",
-  "aliases": [],
+  "aliases": [
+    "settings-screen",
+    "preferences"
+  ],
   "dependencies": [
     "react-native-svg",
     "expo-haptics"

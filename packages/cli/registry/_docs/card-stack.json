@@ -1,7 +1,11 @@
 {
   "name": "card-stack",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "wallet-cards",
+    "stacked-cards",
+    "apple-wallet"
+  ],
   "exportName": "CardStack",
   "files": [
     "src/components/ui/card-stack.tsx"

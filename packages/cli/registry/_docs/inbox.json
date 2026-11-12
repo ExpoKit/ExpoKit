@@ -1,7 +1,10 @@
 {
   "name": "inbox",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "messages-list",
+    "mail-inbox"
+  ],
   "exportName": "Inbox",
   "files": [
     "src/components/blocks/inbox.tsx"

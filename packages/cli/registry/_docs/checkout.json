@@ -1,7 +1,11 @@
 {
   "name": "checkout",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "cart",
+    "shopping-cart",
+    "payment-screen"
+  ],
   "exportName": "Checkout",
   "files": [
     "src/components/blocks/checkout.tsx"

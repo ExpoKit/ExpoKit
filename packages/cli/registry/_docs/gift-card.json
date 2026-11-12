@@ -1,7 +1,10 @@
 {
   "name": "gift-card",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "voucher",
+    "gift-voucher"
+  ],
   "exportName": "GiftCard",
   "files": [
     "src/components/ui/gift-card.tsx"

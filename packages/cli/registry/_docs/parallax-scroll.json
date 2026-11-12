@@ -1,7 +1,11 @@
 {
   "name": "parallax-scroll",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "parallax-header",
+    "collapsing-header",
+    "stretchy-header"
+  ],
   "exportName": "ParallaxScrollView",
   "files": [
     "src/components/ui/parallax-scroll.tsx"

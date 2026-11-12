@@ -1,7 +1,10 @@
 {
   "name": "profile",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "profile-screen",
+    "account-screen"
+  ],
   "exportName": "Profile",
   "files": [
     "src/components/blocks/profile.tsx"

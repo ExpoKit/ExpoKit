@@ -1,7 +1,10 @@
 {
   "name": "settings",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "settings-screen",
+    "preferences"
+  ],
   "exportName": "Settings",
   "files": [
     "src/components/blocks/settings.tsx"

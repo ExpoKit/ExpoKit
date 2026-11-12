@@ -1,7 +1,11 @@
 {
   "name": "scratch-card",
   "category": "Coupons",
-  "aliases": [],
+  "aliases": [
+    "scratch-off",
+    "scratch-to-reveal",
+    "lottery-card"
+  ],
   "exportName": "ScratchCard",
   "files": [
     "src/components/ui/scratch-card.tsx"

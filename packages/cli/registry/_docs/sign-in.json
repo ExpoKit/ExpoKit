@@ -1,7 +1,12 @@
 {
   "name": "sign-in",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "login",
+    "login-screen",
+    "auth-screen",
+    "sign-up"
+  ],
   "exportName": "SignIn",
   "files": [
     "src/components/blocks/sign-in.tsx"

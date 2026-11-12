@@ -1,7 +1,11 @@
 {
   "name": "dashboard",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "home-screen",
+    "analytics-dashboard",
+    "finance-dashboard"
+  ],
   "exportName": "Dashboard",
   "files": [
     "src/components/blocks/dashboard.tsx"

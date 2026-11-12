@@ -1,7 +1,10 @@
 {
   "name": "isometric-bar",
   "category": "Charts",
-  "aliases": [],
+  "aliases": [
+    "3d-bar-chart",
+    "isometric-chart"
+  ],
   "exportName": "IsometricBarChart",
   "files": [
     "src/components/charts/isometric-bar.tsx"

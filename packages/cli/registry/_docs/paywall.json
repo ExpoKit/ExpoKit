@@ -1,7 +1,11 @@
 {
   "name": "paywall",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "subscription-screen",
+    "in-app-purchase",
+    "pricing-screen"
+  ],
   "exportName": "Paywall",
   "files": [
     "src/components/blocks/paywall.tsx"

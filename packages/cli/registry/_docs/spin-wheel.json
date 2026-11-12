@@ -1,7 +1,12 @@
 {
   "name": "spin-wheel",
   "category": "Coupons",
-  "aliases": [],
+  "aliases": [
+    "prize-wheel",
+    "wheel-of-fortune",
+    "spin-to-win",
+    "lucky-wheel"
+  ],
   "exportName": "SpinWheel",
   "files": [
     "src/components/ui/spin-wheel.tsx"

@@ -1,7 +1,11 @@
 {
   "name": "map",
   "category": "Display",
-  "aliases": [],
+  "aliases": [
+    "map-view",
+    "maps",
+    "map-markers"
+  ],
   "exportName": "MapPin",
   "files": [
     "src/components/ui/map.tsx"

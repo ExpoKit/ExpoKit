@@ -1,7 +1,11 @@
 {
   "name": "drip-toast",
   "category": "Feedback",
-  "aliases": [],
+  "aliases": [
+    "gooey-toast",
+    "dynamic-island-toast",
+    "notification-banner"
+  ],
   "exportName": "DripToaster",
   "files": [
     "src/components/ui/drip-toast.tsx"

@@ -1,7 +1,11 @@
 {
   "name": "parallax-layers",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "layered-parallax",
+    "depth-scene",
+    "parallax"
+  ],
   "exportName": "ParallaxLayers",
   "files": [
     "src/components/ui/parallax-layers.tsx"

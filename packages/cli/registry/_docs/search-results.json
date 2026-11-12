@@ -1,7 +1,9 @@
 {
   "name": "search-results",
   "category": "Blocks",
-  "aliases": [],
+  "aliases": [
+    "search-screen"
+  ],
   "exportName": "SearchResults",
   "files": [
     "src/components/blocks/search-results.tsx"
