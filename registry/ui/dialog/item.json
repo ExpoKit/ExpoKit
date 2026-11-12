@@ -6,6 +6,11 @@
   "previewHeight": 560,
   "description": "A centred alert dialog: the scrim fades in while the card springs from 0.92 to full size, with an optional living tone icon that draws itself in a glowing halo. Modern pill buttons or iOS hairline buttons, side by side or stacked; danger-coloured destructive confirms with a warning haptic, async spinners, a prompt field, and a shake when the confirm is invalid. Use Action Sheet for bottom actions.",
   "summary": "A centred alert whose card springs up from 0.92 while its tone icon draws itself.",
+  "aliases": [
+    "modal",
+    "alert-dialog",
+    "popup"
+  ],
   "usage": "import { useState } from 'react';\nimport { Dialog } from '@/components/ui/dialog';\n\nconst [open, setOpen] = useState(false);\n<Dialog\n  open={open} onOpenChange={setOpen}\n  variant=\"destructive\"\n  title=\"Delete this project?\"\n  confirmLabel=\"Delete\"\n/>",
   "behavior": [
     [

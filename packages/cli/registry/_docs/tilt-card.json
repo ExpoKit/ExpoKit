@@ -1,7 +1,11 @@
 {
   "name": "tilt-card",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "3d-tilt-card",
+    "holographic-card",
+    "parallax-card"
+  ],
   "exportName": "TiltCard",
   "files": [
     "src/components/ui/tilt-card.tsx"

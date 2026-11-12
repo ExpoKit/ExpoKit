@@ -1,7 +1,12 @@
 {
   "name": "chip-group",
   "category": "Selection",
-  "aliases": [],
+  "aliases": [
+    "chips",
+    "filter-chips",
+    "choice-chips",
+    "tags"
+  ],
   "exportName": "ChipGroup",
   "files": [
     "src/components/ui/chip-group.tsx"

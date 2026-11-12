@@ -7,6 +7,10 @@
   "previewHeight": 600,
   "description": "A date field with a floating label and glowing focus halo that opens the Calendar in a spring sheet (drag the grabber to dismiss, a dialog on wide screens) or an anchored popover. Single or range mode, one-tap presets like Next 7 days and Next weekend, optional Clear / Done staging with a live summary, Intl formatting, error shake with an icon message and a success check.",
   "summary": "A floating-label date field that opens the calendar in a draggable spring sheet.",
+  "aliases": [
+    "date-field",
+    "datepicker"
+  ],
   "usage": "import { useState } from 'react';\nimport { DatePicker } from '@/components/ui/date-picker';\n\nconst [date, setDate] = useState<Date | null>(null);\n<DatePicker label=\"Date of birth\" value={date} onChange={setDate} maxDate={new Date()} />",
   "behavior": [
     [

@@ -1,7 +1,11 @@
 {
   "name": "payment-card",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "credit-card",
+    "debit-card",
+    "bank-card"
+  ],
   "exportName": "PaymentCard",
   "files": [
     "src/components/ui/payment-card.tsx"

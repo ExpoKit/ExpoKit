@@ -5,6 +5,11 @@
   "category": "Display",
   "description": "Photo that fades in over soft tinted initials (hue hashed from the name, ink picked for contrast), presence dots, notification badges and a verified seal cut into the edge, a gapped story ring that cross-fades to “seen”, and an AvatarGroup with cut-out borders, a +N chip and a staggered spring-in.",
   "summary": "A photo over hashed-colour initials, with presence dots and badges cut into the edge.",
+  "aliases": [
+    "profile-picture",
+    "user-avatar",
+    "avatar-group"
+  ],
   "usage": "import { Avatar, AvatarGroup } from '@/components/ui/avatar';\n\n<Avatar name=\"Ava Rossi\" src=\"https://i.pravatar.cc/240?img=47\" size=\"lg\" status=\"online\" />\n<AvatarGroup max={3} total={12}>\n  <Avatar name=\"Noah Kim\" />\n  <Avatar name=\"Priya Patel\" />\n  <Avatar name=\"Diego Alvarez\" />\n</AvatarGroup>",
   "behavior": [
     [

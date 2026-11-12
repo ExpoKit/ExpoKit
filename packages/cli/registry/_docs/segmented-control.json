@@ -1,7 +1,10 @@
 {
   "name": "segmented-control",
   "category": "Selection",
-  "aliases": [],
+  "aliases": [
+    "segmented-picker",
+    "toggle-group"
+  ],
   "exportName": "SegmentedControl",
   "files": [
     "src/components/ui/segmented-control.tsx"

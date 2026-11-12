@@ -1,7 +1,10 @@
 {
   "name": "radio-group",
   "category": "Selection",
-  "aliases": [],
+  "aliases": [
+    "radio-button",
+    "radio"
+  ],
   "exportName": "RadioGroup",
   "files": [
     "src/components/ui/radio-group.tsx"

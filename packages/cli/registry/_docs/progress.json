@@ -1,7 +1,11 @@
 {
   "name": "progress",
   "category": "Feedback",
-  "aliases": [],
+  "aliases": [
+    "progress-bar",
+    "progress-ring",
+    "circular-progress"
+  ],
   "exportName": "Progress",
   "files": [
     "src/components/ui/progress.tsx"

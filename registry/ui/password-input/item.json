@@ -5,6 +5,10 @@
   "category": "Inputs",
   "description": "Floating-label password field with an eye / eye-off toggle that cross-fades and spins, a spring-filled strength meter that shifts colour with the score, a live requirements checklist that ticks itself off, and a confirm mode that says when passwords match.",
   "summary": "An eye toggle that twists between states, and a strength meter that springs full.",
+  "aliases": [
+    "password-strength",
+    "password-field"
+  ],
   "usage": "import { useState } from 'react';\nimport { PasswordInput } from '@/components/ui/password-input';\n\nconst [password, setPassword] = useState('');\n<PasswordInput label=\"New password\" value={password} onChangeText={setPassword} requirements />",
   "behavior": [
     [

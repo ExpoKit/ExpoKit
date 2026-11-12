@@ -1,7 +1,11 @@
 {
   "name": "badge",
   "category": "Display",
-  "aliases": [],
+  "aliases": [
+    "status-badge",
+    "status-pill",
+    "label"
+  ],
   "exportName": "Badge",
   "files": [
     "src/components/ui/badge.tsx"

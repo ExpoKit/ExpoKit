@@ -1,7 +1,10 @@
 {
   "name": "card",
   "category": "Display",
-  "aliases": [],
+  "aliases": [
+    "pressable-card",
+    "spotlight-card"
+  ],
   "exportName": "Card",
   "files": [
     "src/components/ui/card.tsx"

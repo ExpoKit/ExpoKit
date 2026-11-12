@@ -1,7 +1,10 @@
 {
   "name": "search-bar",
   "category": "Inputs",
-  "aliases": [],
+  "aliases": [
+    "search-input",
+    "searchbox"
+  ],
   "exportName": "SearchBar",
   "files": [
     "src/components/ui/search-bar.tsx"

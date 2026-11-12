@@ -1,7 +1,11 @@
 {
   "name": "coupon",
   "category": "Coupons",
-  "aliases": [],
+  "aliases": [
+    "promo-code",
+    "discount-coupon",
+    "coupon-code"
+  ],
   "exportName": "Coupon",
   "files": [
     "src/components/ui/coupon.tsx"

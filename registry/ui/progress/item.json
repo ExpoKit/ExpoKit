@@ -5,6 +5,11 @@
   "category": "Feedback",
   "description": "Solid bar in the accent colour with a soft glowing head that rides the fill (or sweeps when indeterminate, or carries animated stripes), an SVG ring with a glowing arc tip whose percentage counts up and morphs into a drawn check, and segments that pop as they fill while the current step pulses. Reaching max plays a short success flash.",
   "summary": "A bar, ring or segments with a glowing head; finishing flashes and draws a check.",
+  "aliases": [
+    "progress-bar",
+    "progress-ring",
+    "circular-progress"
+  ],
   "usage": "import { Progress } from '@/components/ui/progress';\n\n<Progress value={64} label=\"Uploading trip-to-lisbon.mov\" showValue />\n<Progress variant=\"circular\" value={64} />",
   "behavior": [
     [

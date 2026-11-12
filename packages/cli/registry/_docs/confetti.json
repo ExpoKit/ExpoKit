@@ -1,7 +1,11 @@
 {
   "name": "confetti",
   "category": "Coupons",
-  "aliases": [],
+  "aliases": [
+    "celebration",
+    "confetti-cannon",
+    "party-popper"
+  ],
   "exportName": "Confetti",
   "files": [
     "src/components/ui/confetti.tsx"

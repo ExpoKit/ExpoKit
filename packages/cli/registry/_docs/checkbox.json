@@ -1,7 +1,9 @@
 {
   "name": "checkbox",
   "category": "Selection",
-  "aliases": [],
+  "aliases": [
+    "check-box"
+  ],
   "exportName": "Checkbox",
   "files": [
     "src/components/ui/checkbox.tsx"

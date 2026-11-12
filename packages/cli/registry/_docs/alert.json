@@ -1,7 +1,11 @@
 {
   "name": "alert",
   "category": "Feedback",
-  "aliases": [],
+  "aliases": [
+    "callout",
+    "inline-alert",
+    "banner"
+  ],
   "exportName": "Alert",
   "files": [
     "src/components/ui/alert.tsx"

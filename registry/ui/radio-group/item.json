@@ -5,6 +5,10 @@
   "category": "Selection",
   "description": "Pick one of many. The dot springs in with a ripple, selectable cards light their border and pop a check badge that draws itself, and the grouped iOS-style list draws a tick beside the chosen row.",
   "summary": "The dot springs in with a ripple; cards light up and draw a check badge.",
+  "aliases": [
+    "radio-button",
+    "radio"
+  ],
   "usage": "import { RadioGroup } from '@/components/ui/radio-group';\n\n<RadioGroup\n  defaultValue=\"standard\"\n  options={[\n    { value: 'standard', label: 'Standard shipping', description: '4–6 business days · Free' },\n    { value: 'express', label: 'Express', description: '1–2 business days · $9' },\n  ]}\n/>",
   "behavior": [
     [

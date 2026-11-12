@@ -1,7 +1,10 @@
 {
   "name": "flip-card",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "card-flip",
+    "3d-flip-card"
+  ],
   "exportName": "FlipCard",
   "files": [
     "src/components/ui/flip-card.tsx"

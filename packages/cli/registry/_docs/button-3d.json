@@ -1,7 +1,10 @@
 {
   "name": "button-3d",
   "category": "3D",
-  "aliases": [],
+  "aliases": [
+    "3d-button",
+    "keycap-button"
+  ],
   "exportName": "Button3D",
   "files": [
     "src/components/ui/button-3d.tsx"

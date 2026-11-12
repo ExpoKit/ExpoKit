@@ -5,6 +5,11 @@
   "category": "Inputs",
   "description": "One-time-code cells that size themselves to fit any width. The active cell glows with a soft focus halo and a blinking caret, digits pop in on a spring, a pasted code fills every cell, errors shake the row and success pulses across the cells with a drawn check.",
   "summary": "Digits pop into cells that size themselves, with SMS autofill and paste.",
+  "aliases": [
+    "pin-input",
+    "verification-code",
+    "code-input"
+  ],
   "usage": "import { useState } from 'react';\nimport { OtpInput } from '@/components/ui/otp-input';\n\nconst [code, setCode] = useState('');\n<OtpInput value={code} onChangeText={setCode} helperText=\"Sent to +1 415 555 0132\" />",
   "behavior": [
     [

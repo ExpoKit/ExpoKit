@@ -1,7 +1,11 @@
 {
   "name": "stepper",
   "category": "Inputs",
-  "aliases": [],
+  "aliases": [
+    "quantity-selector",
+    "quantity-stepper",
+    "number-input"
+  ],
   "exportName": "Stepper",
   "files": [
     "src/components/ui/stepper.tsx"

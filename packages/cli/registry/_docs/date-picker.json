@@ -1,7 +1,10 @@
 {
   "name": "date-picker",
   "category": "Inputs",
-  "aliases": [],
+  "aliases": [
+    "date-field",
+    "datepicker"
+  ],
   "exportName": "DatePicker",
   "files": [
     "src/components/ui/date-picker.tsx"

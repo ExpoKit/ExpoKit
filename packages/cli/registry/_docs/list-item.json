@@ -1,7 +1,11 @@
 {
   "name": "list-item",
   "category": "Display",
-  "aliases": [],
+  "aliases": [
+    "list-row",
+    "settings-row",
+    "table-cell"
+  ],
   "exportName": "ListItem",
   "files": [
     "src/components/ui/list-item.tsx"

@@ -5,6 +5,10 @@
   "category": "3D",
   "description": "Two-sided card that turns over in 3D on tap — it lifts toward you half-way and its shadow narrows as it goes edge-on, like a real card. Flips left/right or top/bottom, controlled or uncontrolled, and swaps faces exactly at 90° so Android never flickers.",
   "summary": "A two-sided card that turns over in 3D, lifting toward you half-way through.",
+  "aliases": [
+    "card-flip",
+    "3d-flip-card"
+  ],
   "usage": "import { FlipCard } from '@/components/ui/flip-card';\n\n<FlipCard\n  accessibilityLabel=\"Boarding pass\"\n  front={<PassFront flight=\"LH 402\" />}\n  back={<PassBarcode code=\"ZK7Q2P\" />}\n/>",
   "behavior": [
     [

@@ -1,7 +1,11 @@
 {
   "name": "timeline",
   "category": "Display",
-  "aliases": [],
+  "aliases": [
+    "activity-feed",
+    "order-tracking",
+    "vertical-steps"
+  ],
   "exportName": "Timeline",
   "files": [
     "src/components/ui/timeline.tsx"

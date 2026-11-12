@@ -5,6 +5,11 @@
   "category": "Display",
   "description": "Status labels in solid, soft, outline and dot styles across five tones — when the label changes it rolls over letter by letter, the icon pops, the colour cross-fades and the pill springs to its new width. Plus NotificationBadge with BadgeIconTile/BadgeIcon anchors (or your own children), spring-in counts, and pop on change.",
   "summary": "Status pills in four styles that roll, pop and re-tint when their status changes.",
+  "aliases": [
+    "status-badge",
+    "status-pill",
+    "label"
+  ],
   "usage": "import { Badge } from '@/components/ui/badge';\n\nexport function BuildStatus({ done }: { done: boolean }) {\n  return (\n    <Badge tone={done ? 'success' : 'warning'}>{done ? 'Deployed' : 'Building'}</Badge>\n  );\n}",
   "behavior": [
     [

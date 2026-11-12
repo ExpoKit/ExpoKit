@@ -5,6 +5,11 @@
   "category": "3D",
   "description": "A card that tilts toward your finger in 3D — it lifts, its shadow slides away from the light and a reflection (or a rainbow holo sheen) glides across it. Give it a photo (`image`), float content in TiltLayers, and add TiltFoil seals that shimmer as it leans.",
   "summary": "A card that leans toward your finger in 3D while a glare slides across it.",
+  "aliases": [
+    "3d-tilt-card",
+    "holographic-card",
+    "parallax-card"
+  ],
   "usage": "import { TiltCard, TiltLayer } from '@/components/ui/tilt-card';\n\n<TiltCard image={{ uri: photoUrl }} idle accessibilityLabel=\"Manarola, Cinque Terre\" style={{ width: 270, height: 360 }}>\n  <TiltLayer depth={1}>\n    <PlaceCaption place={place} />\n  </TiltLayer>\n</TiltCard>",
   "behavior": [
     [

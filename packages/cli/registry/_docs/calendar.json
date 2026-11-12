@@ -1,7 +1,11 @@
 {
   "name": "calendar",
   "category": "Inputs",
-  "aliases": [],
+  "aliases": [
+    "month-calendar",
+    "range-calendar",
+    "calendar-view"
+  ],
   "exportName": "Calendar",
   "files": [
     "src/components/ui/calendar.tsx"

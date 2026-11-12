@@ -5,6 +5,11 @@
   "category": "Feedback",
   "description": "Sonner-style toasts with living tone icons: the outline draws itself inside a halo, a light-leak glow spills behind it, and a hairline drains along the bottom as time runs out (paused while touched). toast.promise() closes the spinning arc into the success or error circle before the mark draws in, variant=\"minimal\" gives compact inverted pills (with a second line for the description), and variant=\"island\" turns the Toaster into an iPhone-style Dynamic Island.",
   "summary": "Sonner-style toasts whose tone icon draws itself while a hairline drains away.",
+  "aliases": [
+    "snackbar",
+    "sonner",
+    "notification"
+  ],
   "usage": "import { toast, Toaster } from '@/components/ui/toast';\n\n// once, at the root of your app (safeArea keeps it clear of the notch and home indicator)\n<Toaster safeArea />\n\n// above a tab bar: in app/(tabs)/_layout.tsx, next to <Tabs />\n<Toaster safeArea bottomInset={49} />\n\n// anywhere\ntoast.success('Invoice INV-0042 sent', { description: 'Maya will get it by email.' });",
   "behavior": [
     [

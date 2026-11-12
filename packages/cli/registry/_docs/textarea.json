@@ -1,7 +1,11 @@
 {
   "name": "textarea",
   "category": "Inputs",
-  "aliases": [],
+  "aliases": [
+    "multiline-input",
+    "text-area",
+    "auto-grow-input"
+  ],
   "exportName": "Textarea",
   "files": [
     "src/components/ui/textarea.tsx"

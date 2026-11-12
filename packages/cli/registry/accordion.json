@@ -4,7 +4,11 @@
   "title": "Accordion",
   "description": "Collapsible sections whose content is measured, so any height springs open smoothly — with a rotating chevron, fade-and-drop content, single or multiple mode, and default, bordered or separated-card styles.",
   "tier": "free",
-  "aliases": [],
+  "aliases": [
+    "collapsible",
+    "expandable",
+    "faq-accordion"
+  ],
   "dependencies": [
     "react-native-svg"
   ],

@@ -5,6 +5,11 @@
   "category": "Feedback",
   "description": "Inline banner with a living icon that draws itself inside a halo, a soft light-leak glow of its tone, and primary + secondary actions. Optional auto-dismiss shows the time left as a hairline draining along the bottom (pauses while touched), and on dismiss it collapses smoothly so content below glides up.",
   "summary": "An inline banner whose icon draws itself inside a halo, with an optional draining timer.",
+  "aliases": [
+    "callout",
+    "inline-alert",
+    "banner"
+  ],
   "usage": "import { Alert } from '@/components/ui/alert';\n\n<Alert\n  variant=\"warning\"\n  title=\"Storage almost full\"\n  description=\"You've used 9.4 GB of your 10 GB plan.\"\n  dismissible\n/>",
   "behavior": [
     [

@@ -5,6 +5,12 @@
   "category": "Inputs",
   "description": "The label starts as the placeholder and glides onto the border when you focus — a soft accent halo blooms around the field, errors shake in with an icon, valid values pop a spring check. Prefix/suffix, clear button, counter and three variants whose indicator grows from the centre.",
   "summary": "A text field whose label glides onto the border as an accent halo blooms.",
+  "aliases": [
+    "text-input",
+    "text-field",
+    "input",
+    "floating-label-input"
+  ],
   "usage": "import { useState } from 'react';\nimport { FloatingInput } from '@/components/ui/floating-input';\n\nconst [email, setEmail] = useState('');\n<FloatingInput label=\"Email\" value={email} onChangeText={setEmail} keyboardType=\"email-address\" clearable />",
   "behavior": [
     [

@@ -4,7 +4,11 @@
   "title": "Badge",
   "description": "Status labels in solid, soft, outline and dot styles across five tones — when the label changes it rolls over letter by letter, the icon pops, the colour cross-fades and the pill springs to its new width. Plus NotificationBadge with BadgeIconTile/BadgeIcon anchors (or your own children), spring-in counts, and pop on change.",
   "tier": "free",
-  "aliases": [],
+  "aliases": [
+    "status-badge",
+    "status-pill",
+    "label"
+  ],
   "dependencies": [
     "react-native-svg"
   ],

@@ -1,7 +1,11 @@
 {
   "name": "action-sheet",
   "category": "Overlays",
-  "aliases": [],
+  "aliases": [
+    "ios-action-sheet",
+    "options-menu",
+    "context-menu"
+  ],
   "exportName": "ActionSheet",
   "files": [
     "src/components/ui/action-sheet.tsx"

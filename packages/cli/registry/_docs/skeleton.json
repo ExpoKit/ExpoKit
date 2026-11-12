@@ -1,7 +1,11 @@
 {
   "name": "skeleton",
   "category": "Feedback",
-  "aliases": [],
+  "aliases": [
+    "shimmer",
+    "skeleton-loader",
+    "loading-placeholder"
+  ],
   "exportName": "Skeleton",
   "files": [
     "src/components/ui/skeleton.tsx"

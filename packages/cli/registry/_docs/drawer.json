@@ -1,7 +1,12 @@
 {
   "name": "drawer",
   "category": "Overlays",
-  "aliases": [],
+  "aliases": [
+    "side-menu",
+    "navigation-drawer",
+    "hamburger-menu",
+    "sidebar"
+  ],
   "exportName": "Drawer",
   "files": [
     "src/components/ui/drawer.tsx"

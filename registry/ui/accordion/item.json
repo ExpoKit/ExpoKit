@@ -5,6 +5,11 @@
   "category": "Display",
   "description": "Collapsible sections whose content is measured, so any height springs open smoothly — with a rotating chevron, fade-and-drop content, single or multiple mode, and default, bordered or separated-card styles.",
   "summary": "Sections spring open to their measured height while the chevron turns.",
+  "aliases": [
+    "collapsible",
+    "expandable",
+    "faq-accordion"
+  ],
   "usage": "import { Accordion, AccordionItem } from '@/components/ui/accordion';\n\n<Accordion defaultValue={['shipping']}>\n  <AccordionItem value=\"shipping\" title=\"How long does shipping take?\">\n    Orders leave our warehouse within 24 hours.\n  </AccordionItem>\n  <AccordionItem value=\"returns\" title=\"Can I return an item?\">\n    You have 30 days to send anything back for a full refund.\n  </AccordionItem>\n</Accordion>",
   "behavior": [
     [

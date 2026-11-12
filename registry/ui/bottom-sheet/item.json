@@ -6,6 +6,11 @@
   "previewHeight": 560,
   "description": "Draggable bottom sheet with snap points, a grabber pill that stretches as you drag, rubber-banding past its limits and release-velocity snapping with a haptic tick on each detent. The scrim dims in step with its height, content scrolls once fully expanded, a footer stays pinned at every detent, and the keyboard lifts it. Large radius, hairline edge and a soft layered top shadow.",
   "summary": "A draggable sheet with snap points whose grabber stretches as you pull it.",
+  "aliases": [
+    "sheet",
+    "modal-sheet",
+    "bottomsheet"
+  ],
   "usage": "import { useState } from 'react';\nimport { BottomSheet } from '@/components/ui/bottom-sheet';\n\nconst [open, setOpen] = useState(false);\n<BottomSheet\n  open={open}\n  onClose={() => setOpen(false)}\n  snapPoints={['40%', '85%']}\n  title=\"Share album\"\n/>",
   "behavior": [
     [

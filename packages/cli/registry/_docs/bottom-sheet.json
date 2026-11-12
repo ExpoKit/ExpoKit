@@ -1,7 +1,11 @@
 {
   "name": "bottom-sheet",
   "category": "Overlays",
-  "aliases": [],
+  "aliases": [
+    "sheet",
+    "modal-sheet",
+    "bottomsheet"
+  ],
   "exportName": "BottomSheet",
   "files": [
     "src/components/ui/bottom-sheet.tsx"

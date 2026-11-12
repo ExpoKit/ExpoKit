@@ -1,7 +1,11 @@
 {
   "name": "avatar",
   "category": "Display",
-  "aliases": [],
+  "aliases": [
+    "profile-picture",
+    "user-avatar",
+    "avatar-group"
+  ],
   "exportName": "Avatar",
   "files": [
     "src/components/ui/avatar.tsx"

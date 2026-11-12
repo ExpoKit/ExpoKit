@@ -5,6 +5,10 @@
   "category": "Inputs",
   "description": "Search field with a soft focus halo: the magnifier pops on focus, Cancel slides in as the field springs narrower, the clear button scales in and a spinning arc shows loading. Suggestions drop down in an animated panel with recent / trending icons and the matching text in bold; a trailing slot fits a filter or mic button. The minimal variant expands from a round icon.",
   "summary": "Focus pops the magnifier and springs in Cancel; suggestions drop down below.",
+  "aliases": [
+    "search-input",
+    "searchbox"
+  ],
   "usage": "import { useState } from 'react';\nimport { SearchBar } from '@/components/ui/search-bar';\n\nconst [query, setQuery] = useState('');\n<SearchBar value={query} onChangeText={setQuery} placeholder=\"Search products\" />",
   "behavior": [
     [

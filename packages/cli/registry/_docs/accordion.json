@@ -1,7 +1,11 @@
 {
   "name": "accordion",
   "category": "Display",
-  "aliases": [],
+  "aliases": [
+    "collapsible",
+    "expandable",
+    "faq-accordion"
+  ],
   "exportName": "Accordion",
   "files": [
     "src/components/ui/accordion.tsx"

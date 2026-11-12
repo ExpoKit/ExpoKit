@@ -1,7 +1,11 @@
 {
   "name": "progress-steps",
   "category": "Navigation",
-  "aliases": [],
+  "aliases": [
+    "step-indicator",
+    "wizard-steps",
+    "multi-step-progress"
+  ],
   "exportName": "ProgressSteps",
   "files": [
     "src/components/ui/progress-steps.tsx"

@@ -1,7 +1,11 @@
 {
   "name": "dialog",
   "category": "Overlays",
-  "aliases": [],
+  "aliases": [
+    "modal",
+    "alert-dialog",
+    "popup"
+  ],
   "exportName": "Dialog",
   "files": [
     "src/components/ui/dialog.tsx"

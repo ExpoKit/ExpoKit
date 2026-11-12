@@ -5,6 +5,10 @@
   "category": "Selection",
   "description": "A liquid indicator: the leading edge springs ahead and the trailing edge catches up, so it stretches between segments — measured with onLayout to fit any label. Drag the selected segment to scrub. iOS pill, tab underline and outline looks, with icons and three sizes.",
   "summary": "A liquid indicator that stretches as it slides; drag it to scrub.",
+  "aliases": [
+    "segmented-picker",
+    "toggle-group"
+  ],
   "usage": "import { useState } from 'react';\nimport { SegmentedControl } from '@/components/ui/segmented-control';\n\nconst [range, setRange] = useState('Week');\n<SegmentedControl options={['Day', 'Week', 'Month', 'Year']} value={range} onValueChange={setRange} />",
   "behavior": [
     [

@@ -1,7 +1,10 @@
 {
   "name": "switch",
   "category": "Selection",
-  "aliases": [],
+  "aliases": [
+    "toggle",
+    "toggle-switch"
+  ],
   "exportName": "Switch",
   "files": [
     "src/components/ui/switch.tsx"

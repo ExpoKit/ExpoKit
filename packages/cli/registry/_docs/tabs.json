@@ -1,7 +1,11 @@
 {
   "name": "tabs",
   "category": "Navigation",
-  "aliases": [],
+  "aliases": [
+    "top-tabs",
+    "tab-view",
+    "underline-tabs"
+  ],
   "exportName": "Tabs",
   "files": [
     "src/components/ui/tabs.tsx"

@@ -1,7 +1,11 @@
 {
   "name": "toast",
   "category": "Feedback",
-  "aliases": [],
+  "aliases": [
+    "snackbar",
+    "sonner",
+    "notification"
+  ],
   "exportName": "Toaster",
   "files": [
     "src/components/ui/toast.tsx"

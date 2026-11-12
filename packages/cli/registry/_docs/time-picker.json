@@ -1,7 +1,10 @@
 {
   "name": "time-picker",
   "category": "Inputs",
-  "aliases": [],
+  "aliases": [
+    "clock-picker",
+    "time-wheel"
+  ],
   "exportName": "TimePicker",
   "files": [
     "src/components/ui/time-picker.tsx"

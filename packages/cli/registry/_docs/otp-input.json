@@ -1,7 +1,11 @@
 {
   "name": "otp-input",
   "category": "Inputs",
-  "aliases": [],
+  "aliases": [
+    "pin-input",
+    "verification-code",
+    "code-input"
+  ],
   "exportName": "OtpInput",
   "files": [
     "src/components/ui/otp-input.tsx"

@@ -5,6 +5,9 @@
   "category": "Selection",
   "description": "The tick draws itself in, the box squishes on press and a ring bursts out. Labels, descriptions and to-do strike-through.",
   "summary": "A checkbox whose tick draws itself in as the box squishes and a ring bursts out.",
+  "aliases": [
+    "check-box"
+  ],
   "usage": "import { Checkbox } from '@/components/ui/checkbox';\n\n<Checkbox\n  label=\"Email me about new releases\"\n  description=\"About once a month, never spam.\"\n  defaultChecked\n/>",
   "behavior": [
     [
