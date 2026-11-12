@@ -6,6 +6,7 @@
     "exactOptionalPropertyTypes": true
   },
   "include": [
+    "ui/avatar-picker/src/**/*",
     "blocks/cart/src/**/*",
     "blocks/chat/src/**/*",
     "blocks/checkout/src/**/*",
