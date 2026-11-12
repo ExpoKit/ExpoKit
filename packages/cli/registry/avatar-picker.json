@@ -1,0 +1,26 @@
+{
+  "name": "avatar-picker",
+  "type": "component",
+  "title": "Avatar Picker",
+  "description": "90 different hand-drawn characters in 5 illustration styles — flat colour on a blob, black ink line art, crayon, pencil sketch and pixel art (18 each) — drawn entirely in code, no image files. Plus an AvatarPicker as a scrolling grid or a swipeable carousel, with style tabs, a live preview and a spring selection ring.",
+  "tier": "pro",
+  "aliases": [
+    "avatar-library",
+    "avatars",
+    "character-avatars",
+    "profile-avatar-picker"
+  ],
+  "dependencies": [
+    "expo-haptics",
+    "react-native-svg"
+  ],
+  "registryDependencies": [
+    "kit",
+    "tabs"
+  ],
+  "sharedFiles": [
+    "lib/kit.tsx",
+    "components/ui/tabs.tsx"
+  ],
+  "filesDir": null
+}

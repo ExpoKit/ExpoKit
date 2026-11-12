@@ -1,0 +1,198 @@
+{
+  "name": "avatar-picker",
+  "category": "Selection",
+  "aliases": [
+    "avatar-library",
+    "avatars",
+    "character-avatars",
+    "profile-avatar-picker"
+  ],
+  "exportName": "AvatarPicker",
+  "files": [
+    "src/components/ui/avatar-picker.tsx",
+    "src/lib/avatars/catalog.tsx",
+    "src/lib/avatars/pixel.tsx",
+    "src/lib/avatars/vector.tsx"
+  ],
+  "summary": "90 code-drawn avatars in flat, ink, crayon, pencil and pixel styles, with a grid or carousel picker.",
+  "props": [
+    [
+      "Avatar.id",
+      "string | null",
+      "—",
+      "Built-in avatar id, e.g. \"flat-01\" or \"pencil-07\". Unknown ids show a neutral placeholder."
+    ],
+    [
+      "Avatar.size",
+      "number",
+      "48",
+      "Width and height in points."
+    ],
+    [
+      "Avatar.shape",
+      "\"circle\" | \"rounded\" | \"square\"",
+      "\"circle\"",
+      "Tile shape (rounded follows the kit radius)."
+    ],
+    [
+      "Avatar.backgroundColor",
+      "string",
+      "the avatar's pastel",
+      "Tile colour behind the character; \"transparent\" for none."
+    ],
+    [
+      "Avatar.accessibilityLabel",
+      "string",
+      "\"<name> avatar\"",
+      "Screen-reader label."
+    ],
+    [
+      "selectedAvatar",
+      "string | null",
+      "—",
+      "Selected id (controlled)."
+    ],
+    [
+      "defaultAvatar",
+      "string",
+      "—",
+      "Initial id when uncontrolled."
+    ],
+    [
+      "onSelect",
+      "(id, avatar) => void",
+      "—",
+      "Called with the id and its definition."
+    ],
+    [
+      "styles",
+      "AvatarStyle[]",
+      "all four",
+      "Which styles to offer: \"flat\" | \"ink\" | \"crayon\" | \"pencil\" | \"pixel\". One style hides the tabs."
+    ],
+    [
+      "include",
+      "string[]",
+      "—",
+      "Only these ids, in this order."
+    ],
+    [
+      "exclude",
+      "string[]",
+      "—",
+      "Hide these ids."
+    ],
+    [
+      "maxAvatars",
+      "number",
+      "—",
+      "Show at most this many."
+    ],
+    [
+      "columns",
+      "number",
+      "4 / 6 / 8",
+      "Grid columns (phone / medium / expanded)."
+    ],
+    [
+      "avatarSize",
+      "number",
+      "fills the column",
+      "Avatar size in the grid."
+    ],
+    [
+      "shape",
+      "\"circle\" | \"rounded\" | \"square\"",
+      "\"circle\"",
+      "Shape of the tiles, ring and preview."
+    ],
+    [
+      "backgroundColor",
+      "string | (avatar) => string",
+      "each avatar's pastel",
+      "One colour for every tile, or one per avatar."
+    ],
+    [
+      "showTabs",
+      "boolean",
+      "true with 2+ styles",
+      "Style tabs: All, Flat, Ink, Crayon, Pencil, Pixel."
+    ],
+    [
+      "layout",
+      "\"grid\" | \"carousel\"",
+      "\"grid\"",
+      "Scrolling grid, or one swipeable row (avatarSize defaults to 64 there)."
+    ],
+    [
+      "showPreview",
+      "boolean",
+      "true",
+      "Large preview of the selection with its name, style and id."
+    ],
+    [
+      "emptyMessage",
+      "string",
+      "\"No avatars match these filters.\"",
+      "Shown when the filters leave nothing."
+    ],
+    [
+      "accent",
+      "string",
+      "theme accent",
+      "Selection ring, check badge and tab colour."
+    ],
+    [
+      "haptics",
+      "boolean",
+      "true",
+      "Selection tick."
+    ],
+    [
+      "style",
+      "StyleProp<ViewStyle>",
+      "—",
+      "Style for the root."
+    ],
+    [
+      "className",
+      "string",
+      "—",
+      "Tailwind classes on the root when using NativeWind or Uniwind."
+    ],
+    [
+      "AVATARS / getAvatar / filterAvatars",
+      "exports",
+      "—",
+      "The catalogue ({ id, name, style, background, component }), lookup by id, and the same filter the picker uses."
+    ]
+  ],
+  "behavior": [
+    [
+      "Artwork",
+      "Every avatar is react-native-svg paths and rects: no PNGs, URLs or base64, so it works offline and looks the same on iOS, Android and web. Each style has its own 18 characters; ids are stable: flat-01…18, ink-01…18, crayon-01…18, pencil-01…18, pixel-01…18."
+    ],
+    [
+      "Motion",
+      "The selection ring and check badge spring in, tiles squish while pressed, and the preview pops when the choice changes. Category tabs slide their underline."
+    ],
+    [
+      "Layout",
+      "layout=\"grid\" fills its width (4 columns on phones, 6 on medium, 8 on expanded screens unless you pass columns) and scrolls inside a bounded parent. layout=\"carousel\" is one swipeable row."
+    ],
+    [
+      "Reduced motion",
+      "Press squish and the preview pop are skipped; the ring appears instantly."
+    ],
+    [
+      "Haptics",
+      "A selection tick when you pick an avatar or switch tabs. Turn off with haptics={false}."
+    ],
+    [
+      "Screen readers",
+      "The grid is a radio group; each tile reads its character's name and selected state. <Avatar> reads as an image labelled with the name."
+    ]
+  ],
+  "usage": null,
+  "examples": []
+}
