@@ -4,11 +4,11 @@ import { Image, Platform, Pressable, Text, View } from 'react-native';
 import { FlipCard } from '@/components/ui/flip-card';
 import { useKit } from '@/lib/kit';
 
+import { photo } from '../../_photos';
+
 /** Demo control text (buttons, chips, labels on fixed shapes) stops at iOS's largest standard text size. */
 const FONT_CAP = 1.35;
 
-/** Any photo works (`require()` or a URL). */
-const photo = (id: number, w: number, h: number) => ({ uri: `https://picsum.photos/id/${id}/${w}/${h}` });
 const hand = Platform.select({ ios: 'Noteworthy', android: 'casual', default: '"Bradley Hand", "Segoe Print", cursive' });
 
 /** Smooth darkening toward the bottom of a photo, made from thin bands. */
@@ -142,7 +142,7 @@ export function Flashcard() {
         accessibilityLabel="Flashcard"
         front={
           <View style={{ height: 240, backgroundColor: '#3a0d10' }}>
-            <Image alt="" source={photo(1080, 720, 400)} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />
+            <Image alt="" source={photo(1052, 720, 400)} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }} />
             <Scrim max={0.8} />
             <View style={{ flex: 1, justifyContent: 'flex-end', padding: 18 }}>
               <Text maxFontSizeMultiplier={FONT_CAP} style={{ color: 'rgba(255,255,255,0.75)', fontSize: 11, fontWeight: '700', letterSpacing: 1 }}>SPANISH</Text>

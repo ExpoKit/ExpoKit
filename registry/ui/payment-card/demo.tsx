@@ -4,11 +4,13 @@ import { Image, Pressable, Text, View } from 'react-native';
 import { PaymentCard } from '@/components/ui/payment-card';
 import { alpha, useKit } from '@/lib/kit';
 
+import { photo } from '../../_photos';
+
 /** Demo control text (buttons, chips, labels on fixed shapes) stops at iOS's largest standard text size. */
 const FONT_CAP = 1.35;
 
 /** Soft, blurred photos make premium card art — any image works (`require()` or a URL). */
-const art = (id: number) => ({ uri: `https://picsum.photos/id/${id}/240/151?blur=10` });
+const art = (id: number) => photo(id, 240, 151, true);
 
 /** A screen title, as it sits above the card in your app. */
 function Header({ title, sub, right }: { title: string; sub?: string; right?: React.ReactNode }) {

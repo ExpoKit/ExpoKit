@@ -5,7 +5,9 @@ import { Confetti, type ConfettiHandle } from '@/components/ui/confetti';
 import { Coupon } from '@/components/ui/coupon';
 import { useKit } from '@/lib/kit';
 
-const logo = (id: number) => <Image alt="" source={{ uri: `https://picsum.photos/id/${id}/64/64` }} style={{ width: 18, height: 18, borderRadius: 5 }} />;
+import { photo } from '../../_photos';
+
+const logo = (id: number) => <Image alt="" source={photo(id, 64, 64)} style={{ width: 18, height: 18, borderRadius: 5 }} />;
 
 /** 3D and holographic: tilt it, copy the code, read the T&C on the back, apply it — confetti. */
 export function Hero() {

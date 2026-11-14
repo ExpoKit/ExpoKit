@@ -5,11 +5,10 @@ import { GrainGradient } from '@/components/ui/grain';
 import { TiltCard, TiltLayer } from '@/components/ui/tilt-card';
 import { alpha, useKit } from '@/lib/kit';
 
+import { photo } from '../../_photos';
+
 /** Demo control text (buttons, chips, labels on fixed shapes) stops at iOS's largest standard text size. */
 const FONT_CAP = 1.35;
-
-/** Any photo works (`require()` or a URL). */
-const photo = (id: number, w: number, h: number) => ({ uri: `https://picsum.photos/id/${id}/${w}/${h}` });
 
 /** A screen title, as it sits above the card in your app. */
 function Header({ title, sub, right }: { title: string; sub?: string; right?: React.ReactNode }) {

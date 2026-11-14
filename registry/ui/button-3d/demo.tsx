@@ -5,14 +5,13 @@ import { Button3D } from '@/components/ui/button-3d';
 import { GrainGradient } from '@/components/ui/grain';
 import { useKit } from '@/lib/kit';
 
+import { photo } from '../../_photos';
+
 /** Demo control text (buttons, chips, labels on fixed shapes) stops at iOS's largest standard text size. */
 const FONT_CAP = 1.35;
 
 /** From the Expo Go viewer: `screen` = this IS the phone screen, so no mock frame; `bottomInset` = home indicator. */
 type DemoProps = { screen?: boolean; bottomInset?: number };
-
-/** Any photo works (`require()` or a URL). `blur` gives soft, abstract art. */
-const photo = (id: number, w: number, h: number, blur = false) => ({ uri: `https://picsum.photos/id/${id}/${w}/${h}${blur ? '?blur=10' : ''}` });
 
 /** A screen title, as it sits above the content in your app. */
 function Header({ title, sub, right }: { title: string; sub?: string; right?: React.ReactNode }) {

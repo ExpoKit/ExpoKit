@@ -3,6 +3,7 @@ import {
   AccessibilityInfo,
   Animated,
   Easing,
+  Image,
   Pressable,
   StyleSheet,
   Text,
@@ -933,12 +934,15 @@ function Photo({ uri, delay, style, more }: { uri: string; delay: number; style:
   const [shown] = useState(() => new Animated.Value(0));
   return (
     <View style={[styles.photo, { backgroundColor: colors.muted }, style]}>
-      <Animated.Image
-        source={{ uri }}
-        accessibilityIgnoresInvertColors
-        onLoad={() => Animated.timing(shown, { toValue: 1, duration: 320, delay, useNativeDriver: true }).start()}
-        style={[StyleSheet.absoluteFill, { opacity: shown }]}
-      />
+      <Animated.View style={[StyleSheet.absoluteFill, { opacity: shown }]}>
+        <Image
+          alt=""
+          source={{ uri }}
+          accessibilityIgnoresInvertColors
+          onLoad={() => Animated.timing(shown, { toValue: 1, duration: 320, delay, useNativeDriver: true }).start()}
+          style={StyleSheet.absoluteFill}
+        />
+      </Animated.View>
       {more > 0 ? (
         <View style={[StyleSheet.absoluteFill, styles.more]}>
           <Text maxFontSizeMultiplier={FONT_CAP} style={[styles.moreText, ff]}>+{more}</Text>

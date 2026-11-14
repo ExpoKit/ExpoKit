@@ -5,6 +5,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useKit } from '@/lib/kit';
 
+import { photo } from '../../_photos';
+
 /** Controls stop at iOS's largest standard text size; content text stays uncapped. */
 const FONT_CAP = 1.35;
 

@@ -5,6 +5,8 @@ import { Avatar } from '@/components/ui/avatar';
 import { Timeline } from '@/components/ui/timeline';
 import { alpha, useKit } from '@/lib/kit';
 
+import { photoUri } from '../../_photos';
+
 /** Control text stops at iOS's largest standard size. */
 const FONT_CAP = 1.35;
 
@@ -78,7 +80,7 @@ export function Activity() {
           time: '1h',
           description: 'Moodboard · Autumn campaign',
           avatar: { name: 'Marco Bianchi', src: 'https://i.pravatar.cc/120?img=15' },
-          image: { uri: 'https://picsum.photos/id/1043/800/450', aspectRatio: 16 / 9 },
+          image: { uri: photoUri(1043, 800, 450), aspectRatio: 16 / 9 },
         },
         {
           title: 'Lena Fischer shared a file',
@@ -197,8 +199,6 @@ export function Support() {
   );
 }
 
-const pic = (seed: string) => `https://picsum.photos/seed/${seed}/600/400`;
-
 export function Journey({ screen }: DemoProps) {
   const { colors } = useKit();
   return (
@@ -212,17 +212,17 @@ export function Journey({ screen }: DemoProps) {
         </View>
       }
       items={[
-        { title: 'Landed in Lisbon', time: 'Day 1', description: 'Late flight, pastel de nata at the airport, tram 28 into Alfama before the rain.', images: [{ uri: pic('lisbon'), aspectRatio: 3 / 2 }], tags: ['Lisbon'] },
-        { title: 'Lost in Alfama', time: 'Day 2', description: 'Stairs, tiles, a fado bar that only had six chairs. We stayed until two.', images: [pic('alfama'), pic('tiles')] },
-        { title: 'Sintra day trip', time: 'Day 3', description: 'Fog on Pena Palace in the morning, sun in the Moorish castle by noon.', images: [pic('sintra'), pic('palace'), pic('forest'), pic('castle')] },
+        { title: 'Landed in Lisbon', time: 'Day 1', description: 'Late flight, pastel de nata at the airport, tram 28 into Alfama before the rain.', images: [{ uri: photoUri(1040), aspectRatio: 3 / 2 }], tags: ['Lisbon'] },
+        { title: 'Lost in Alfama', time: 'Day 2', description: 'Stairs, tiles, a fado bar that only had six chairs. We stayed until two.', images: [photoUri(1052), photoUri(1062)] },
+        { title: 'Sintra day trip', time: 'Day 3', description: 'Fog on Pena Palace in the morning, sun in the Moorish castle by noon.', images: [photoUri(1035), photoUri(364), photoUri(1018), photoUri(1051)] },
         { title: 'Rented the car', time: 'Day 4', description: 'A tiny Fiat with a stubborn second gear. Named it Rosa.' },
-        { title: 'Comporta beaches', time: 'Day 5', description: 'Rice fields on one side, empty dunes on the other.', images: [{ uri: pic('dunes'), aspectRatio: 16 / 9 }], tags: ['Beach', 'Alentejo'] },
-        { title: 'Évora', time: 'Day 6', description: 'Roman temple at sunset and the quietest night of the trip.', images: [pic('evora'), pic('temple'), pic('plains')] },
+        { title: 'Comporta beaches', time: 'Day 5', description: 'Rice fields on one side, empty dunes on the other.', images: [{ uri: photoUri(1065), aspectRatio: 16 / 9 }], tags: ['Beach', 'Alentejo'] },
+        { title: 'Évora', time: 'Day 6', description: 'Roman temple at sunset and the quietest night of the trip.', images: [photoUri(1067), photoUri(1073), photoUri(1016)] },
         { title: 'Wine in the Alentejo', time: 'Day 7', description: 'A cellar tour that turned into lunch with the owner’s family. Ordered a case home.' },
-        { title: 'Down to the Algarve', time: 'Day 8', description: 'Benagil caves by kayak — go early, the tour boats arrive at ten.', images: [pic('caves'), pic('kayak')], links: [{ label: 'Kayak rental we used', onPress: () => {} }] },
-        { title: 'Lagos', time: 'Day 9', description: 'Cliff walk to Ponta da Piedade and grilled sardines at the harbour.', images: [{ uri: pic('lagos'), aspectRatio: 3 / 2 }] },
+        { title: 'Down to the Algarve', time: 'Day 8', description: 'Benagil caves by kayak — go early, the tour boats arrive at ten.', images: [photoUri(1023), photoUri(1011)], links: [{ label: 'Kayak rental we used', onPress: () => {} }] },
+        { title: 'Lagos', time: 'Day 9', description: 'Cliff walk to Ponta da Piedade and grilled sardines at the harbour.', images: [{ uri: photoUri(1043), aspectRatio: 3 / 2 }] },
         { title: 'Long drive north', time: 'Day 10', description: 'Six hours, two coffee stops, one wrong turn into a cork forest.' },
-        { title: 'Porto', time: 'Day 11', status: 'current', description: 'Ribeira, the bridge at blue hour, port lodges across the river.', images: [pic('porto'), pic('bridge'), pic('river')], tags: ['Now'] },
+        { title: 'Porto', time: 'Day 11', status: 'current', description: 'Ribeira, the bridge at blue hour, port lodges across the river.', images: [photoUri(1081), photoUri(1057), photoUri(1015)], tags: ['Now'] },
         { title: 'Douro Valley', time: 'Day 12', status: 'upcoming', description: 'Train along the river to Pinhão, then home.' },
       ]}
     />
